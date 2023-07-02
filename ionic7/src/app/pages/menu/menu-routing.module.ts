@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'home',
-   
+   canActivate: [GuardsGuard],
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {

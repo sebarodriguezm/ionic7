@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, ToastController } from '@ionic/angular';
+import { AlertController, ToastController, LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-utils',
@@ -9,15 +9,16 @@ import { AlertController, ToastController } from '@ionic/angular';
 export class UtilsComponent  implements OnInit {
 
   constructor(
-    private alertController: AlertController,
-    private toastController: ToastController
+    private alert: AlertController,
+    private toast: ToastController,
+    private loading: LoadingController
   ) {}
 
   ngOnInit()
   {}
-
+//alert es intrusivo necesita que el usuario haga algo
   async showAlert(title: string, message: string) {
-    const alert = await this.alertController.create({
+    const alert = await this.alert.create({
       header: title,
       message: message,
       buttons: ['OK']
@@ -26,17 +27,56 @@ export class UtilsComponent  implements OnInit {
     await alert.present();
   }
 
-  async showToast(message: string) {
-    const toast = await this.toastController.create({
-      message: message,
-      duration: 2000
+  // message es no intrusivo solo muestra un mensaje  y desaparece solo 
+  async message(msg:any, time = 3, estilo = 'toast-success') {
+    const toast = await this.toast.create({
+      message: msg,
+      duration: time * 1000,
+      position: 'top',
+      cssClass: estilo
     });
 
-    await toast.present();
+    toast.present();
   }
 
-  showMessage(message: string) {
-    console.log(message);
-  }
+// loading es un spinner que se muestra mientras se realiza una tarea
+ async showLoading(message: string) {
+    const loading = await this.loading.create({
+      message: message,
+      spinner: 'circles',
+      translucent: true
+    });
 
+    await loading.present();
+  }
+// loading es un spinner que se muestra mientras se realiza una tarea
+  async hideLoading() {
+    await this.loading.dismiss();
+  }
+// alerta de confirmacion 
+  async showConfirmationAlert(title: string, message: string) {
+    return new Promise<boolean>(async (resolve) => {
+      const alert = await this.alert.create({
+        header: title,
+        message: message,
+        buttons: [
+          {
+            text: 'Cancelar',
+            role: 'cancel',
+            handler: () => {
+              resolve(false);
+            }
+          },
+          {
+            text: 'Confirmar',
+            handler: () => {
+              resolve(true);
+            }
+          }
+        ]
+      });
+
+      await alert.present();
+    });
+  }
 }

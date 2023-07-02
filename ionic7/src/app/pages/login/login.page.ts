@@ -3,7 +3,9 @@ import { Router } from '@angular/router';
 
 
 import { LoadingController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
+import { UtilsComponent } from 'src/app/components/utils/utils.component';
 import { UserAdmDto } from 'src/app/core/dto/user-adm.dto';
 import { CrudService } from 'src/app/providers/crudservice.service';
 import { LanguageService } from 'src/app/providers/languages.service';
@@ -26,7 +28,9 @@ private suscribeLang: Subscription = new Subscription;
     private crud: CrudService<UserAdmDto>,
     private router: Router,
     private loading: LoadingController,
-    private langService: LanguageService
+    private langService: LanguageService,
+    private utils: UtilsComponent,
+    private translate: TranslateService
   ) { }
 
   ngOnInit() {
@@ -43,19 +47,23 @@ private suscribeLang: Subscription = new Subscription;
   login() {
     // Validación de datos de entrada
     if (!this.admin || !this.admin.email || !this.admin.password) {
-      console.error('Datos de inicio de sesión incompletos');
+      const msg = this.translate.instant('LOGIN_PAGE.MissingData');
+      this.utils.message(msg, 3, 'toast-error');
       // Mostrar mensaje de error al usuario o tomar medidas apropiadas
       return;
     }
-  
+  const msg = this.translate.instant('LOGIN_PAGE.Loading');
+  this.utils.showLoading(msg);
     this.crud.Login(this.admin)
       .then(() => {
-        this.router.navigate(['/menu']);
+        this.utils.hideLoading();
+        this.router.navigate(['/menu/home']);
       })
       .catch((error:any) => {
         console.error('Error durante el inicio de sesión:', error);
         // Mostrar mensaje de error al usuario o tomar medidas apropiadas
       });
+     
   }
 
   logout(){

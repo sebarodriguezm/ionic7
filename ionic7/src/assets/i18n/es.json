@@ -6,6 +6,8 @@
     "Login": "Entrar",
     "Recover": "Ingresa tu email y recupera tu contraseña",
     "RecoverPass" : "Recuperar contraseña",
+    "Loading": "Iniciando sesión...",
+    "MissingData": "Por favor ingresa tu usuario y contraseña",
     "Confirm": "Aceptar",
     "Confirmation": "Confirmación",
     "Close": "Cerrar",
