@@ -21,13 +21,14 @@ export class RegisterPage implements OnInit {
 
   ngOnInit() {}
 
-  add() {
+  registerAdmin() {
     const msg = this.translate.instant('REGISTER.Loading');
     this.utils.showLoading(msg);
     this.crud.RegisterAdmin(this.admin, this.admin.password!).then((res) => {
-        console.log('exito');
         this.admin = new UserAdmDto(); // Reiniciar el objeto "term" después de agregarlo
         this.utils.hideLoading();
+        const msg = this.translate.instant('REGISTER.Success');
+        this.utils.message(msg, 1, 'toast-success');
         this.route.navigate(['/login']);
       })
       .catch((e) => {

@@ -26,8 +26,8 @@
         "Close": "Close",
         "Invalid": "Invalid credentials, please try again",
         "EmailSent": "Email sent, please check your inbox",
-        "Change": "Cambiar idioma",
-        "Register": "Register"
+        "Change": "Cambiar idioma"
+       
       },
       "LOGOUT": {
         "Logout_Session": "Logout",
@@ -50,7 +50,8 @@
         "Err2": "An error has occurred",
         "FieldRequired": "You must complete all the fields to create an administrator",
         "GoLogin": "Go to login",
-        "Loading": "Registering administrator..."
+        "Loading": "Registering administrator...",
+        "Success": "Administrator successfully registered"
     },
     "RECOVERY": {
         "EnterEmail": "Enter the email you registered with to recover your password",
