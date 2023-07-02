@@ -10,7 +10,9 @@
         "Confirmation": "Confirmation",
         "Close": "Close",
         "Invalid": "Invalid credentials, please try again",
-        "EmailSent": "Email sent, please check your inbox"
+        "EmailSent": "Email sent, please check your inbox",
+        "Change": "Change language",
+        "Register": "Register"
       },
       "LOGOUT_PAGE": {
         "Logout_Session": "Logout",

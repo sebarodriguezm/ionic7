@@ -14,6 +14,7 @@ import { LanguageService } from 'src/app/providers/languages.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage  implements OnInit, OnDestroy {
+
 admin: UserAdmDto = new UserAdmDto();
 Recover: boolean = false;
 public otherLang = '';
@@ -70,13 +71,14 @@ private suscribeLang: Subscription = new Subscription;
    
   }
 
+  // Recuperar contraseña
   recoveryPass() {
 
     this.crud.resetPassword(this.admin.email).then((data: any) => {
       
       console.log('Correo enviado::> ', data);
      
-      this.router.navigate(['/menu/transport']);
+      this.router.navigate(['/login']);
       this.closeRecover();
     },
       (err:any) => {
@@ -100,6 +102,7 @@ private suscribeLang: Subscription = new Subscription;
     this.suscribeLang?.unsubscribe();
   }
 
+  // Se obtiene el idioma no seleccionado
   setOtherLang() {
     // se obtiene el idioma no seleccionado
     let nonSelected = this.langService.getNonSelectedLanguage();
@@ -109,7 +112,12 @@ private suscribeLang: Subscription = new Subscription;
     }
   }
 
+  // Se cambia el idioma
   changeLanguage() {
     this.langService.setLanguage(this._otherLang);
+  }
+
+  goRegister(){
+    this.router.navigate(['/menu/register']);
   }
 }

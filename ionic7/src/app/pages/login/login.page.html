@@ -8,9 +8,9 @@
         size-sm="12"
         size-md="4"
         size-lg="3"
+        class="ion-text-center"
       >
         <div
-          style="background-color: #ffffff; padding: 30px 0px"
           class="ion-text-center"
         >
           <img src="../../assets//img/logo.jpg" width="180px" />
@@ -18,35 +18,30 @@
         <div class="title-login ion-padding ion-text-center">
           <p>{{ 'LOGIN_PAGE.Enter' | translate}}</p>
         </div>
-        <ion-list style="background: transparent">
-          <ion-item lines="none">
+        <ion-list >
+          <ion-item >
             <ion-label position="stacked" class="label-form">Email</ion-label>
             <ion-input type="text" [(ngModel)]="admin.email"></ion-input>
           </ion-item>
-          <ion-item lines="none">
+          <ion-item >
             <ion-label position="stacked" class="label-form"
               >Password</ion-label
             >
             <ion-input type="password" [(ngModel)]="admin.password"></ion-input>
           </ion-item>
-          <p
-            style="
-              cursor: pointer;
-              font-size: 0.8em !important;
-              color: rgb(0, 0, 0);
-              text-align: right;
-              margin-right: 20px;
-            "
-            (click)="showRecover()"
-          >
+          <!--activatable es para dar una especie de pointer, cambia de color el fondo-->
+          <ion-item class="ion-text-center pointer ion-activatable"
+          (click)="showRecover()">
             {{ 'LOGIN_PAGE.Recover' | translate}}
-          </p>
+          </ion-item>
+
           <div class="ion-padding">
             <ion-button
               color="primary"
               size="medium"
               shape="round"
               expand="block"
+              fill="outline"
               (click)="login()"
             >
               {{ 'LOGIN_PAGE.Confirm' | translate}}
@@ -66,10 +61,12 @@
               fill="clear"
               shape="round"
             >
-              Cambiar idioma
+            {{ 'LOGIN_PAGE.Change' | translate}}
             </ion-button>
           </div>
         </ion-list>
+        <a class="pointer" (click)="goRegister()">{{'LOGIN_PAGE.Register' | translate}}</a>
+
       </ion-col>
 
       <!--LOGOUT-->

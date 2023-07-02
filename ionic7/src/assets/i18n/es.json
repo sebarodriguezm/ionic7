@@ -10,7 +10,9 @@
     "Confirmation": "Confirmación",
     "Close": "Cerrar",
     "Invalid": "Credenciales inválidas, por favor vuelve a intentarlo",
-    "EmailSent": "Correo enviado, por favor revisa tu bandeja de entrada"
+    "EmailSent": "Correo enviado, por favor revisa tu bandeja de entrada",
+    "Change": "Cambiar idioma",
+    "Register": "Registrarse"
   },
   "LOGOUT_PAGE": {
     "Logout_Session": "Salir de la sesión",
