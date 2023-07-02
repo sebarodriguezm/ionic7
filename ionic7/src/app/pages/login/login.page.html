@@ -1,169 +1,139 @@
-
 <ion-content>
-
-
   <ion-grid>
     <ion-row>
-      <ion-col *ngIf="!Recover" size-xs="12" size-sm="12" size-md="4" size-lg="3">
-        <div style="background-color: #FFFFFF; padding: 30px 0px;" class="ion-text-center">
-          <img src="../../assets//img/logo.jpg" width="180px">
+      <!--LOGIN-->
+      <ion-col
+        *ngIf="!Recover"
+        size-xs="12"
+        size-sm="12"
+        size-md="4"
+        size-lg="3"
+      >
+        <div
+          style="background-color: #ffffff; padding: 30px 0px"
+          class="ion-text-center"
+        >
+          <img src="../../assets//img/logo.jpg" width="180px" />
         </div>
-
-
-
         <div class="title-login ion-padding ion-text-center">
-          <p>
-          {{ 'LOGIN_PAGE.Enter' | translate}}
-          </p>
+          <p>{{ 'LOGIN_PAGE.Enter' | translate}}</p>
         </div>
-
-        <ion-list style="background: transparent;">
+        <ion-list style="background: transparent">
           <ion-item lines="none">
             <ion-label position="stacked" class="label-form">Email</ion-label>
             <ion-input type="text" [(ngModel)]="admin.email"></ion-input>
           </ion-item>
           <ion-item lines="none">
-            <ion-label position="stacked" class="label-form">Password</ion-label>
+            <ion-label position="stacked" class="label-form"
+              >Password</ion-label
+            >
             <ion-input type="password" [(ngModel)]="admin.password"></ion-input>
           </ion-item>
-          <p style="cursor:pointer;font-size: .8em !important;color:rgb(0, 0, 0);text-align: right;margin-right: 20px;"
-          (click)="showRecover()">
-          {{ 'LOGIN_PAGE.Recover' | translate}}
+          <p
+            style="
+              cursor: pointer;
+              font-size: 0.8em !important;
+              color: rgb(0, 0, 0);
+              text-align: right;
+              margin-right: 20px;
+            "
+            (click)="showRecover()"
+          >
+            {{ 'LOGIN_PAGE.Recover' | translate}}
           </p>
           <div class="ion-padding">
-            <ion-button color="primary" size="medium" shape="round" expand="block" (click)="login()">
+            <ion-button
+              color="primary"
+              size="medium"
+              shape="round"
+              expand="block"
+              (click)="login()"
+            >
               {{ 'LOGIN_PAGE.Confirm' | translate}}
             </ion-button>
-            <ion-button color="danger" size="medium" shape="round" expand="block" (click)="logout()">
+            <ion-button
+              color="danger"
+              size="medium"
+              shape="round"
+              expand="block"
+              (click)="logout()"
+            >
               {{ 'LOGIN_PAGE.Close' | translate}}
-              </ion-button>
-              <ion-button  (click)="changeLanguage()" expand="block" fill="clear" shape="round">
-                Cambiar idioma
-              </ion-button>
+            </ion-button>
+            <ion-button
+              (click)="changeLanguage()"
+              expand="block"
+              fill="clear"
+              shape="round"
+            >
+              Cambiar idioma
+            </ion-button>
           </div>
-          <!--ion-item color="dark">
-            <ion-label>{{ 'Login.Language' | translate }}</ion-label>
-            <ion-select [(ngModel)]="language" (ionChange)="changeLanguage()" okText="{{ 'Select.Ok' | translate }}"
-              cancelText="{{ 'Select.Cancel' | translate }}">
-              <ion-select-option value="es">Español</ion-select-option>
-              <ion-select-option value="en">English</ion-select-option>
-            </ion-select>
-          </ion-item-->
         </ion-list>
       </ion-col>
 
-      <ion-col *ngIf="Recover" size-xs="12" size-sm="12" size-md="4" size-lg="3">
-        <div style="background-color: #FFFFFF; padding: 30px 0px;" class="ion-text-center">
-          <img src="../../assets//img/logo.jpg" width="180px">
+      <!--LOGOUT-->
+      <ion-col
+        *ngIf="Recover"
+        size-xs="12"
+        size-sm="12"
+        size-md="4"
+        size-lg="3"
+      >
+        <div
+          style="background-color: #ffffff; padding: 30px 0px"
+          class="ion-text-center"
+        >
+          <img src="../../assets//img/logo.jpg" width="180px" />
         </div>
-  
-
-      <div class="title-login ion-padding ion-text-center">
-              <p>
-                {{ 'LOGIN_PAGE.Recover' | translate}}
-              </p>
+        <div class="title-login ion-padding ion-text-center">
+          <p>{{ 'LOGIN_PAGE.Recover' | translate}}</p>
+        </div>
+        <div class="ion-padding">
+          <ion-list style="background: transparent">
+            <ion-item lines="none">
+              <ion-input
+                type="email"
+                placeholder="hola5"
+                [(ngModel)]="admin.email"
+              >
+              </ion-input>
+            </ion-item>
+            <div class="ion-text-center">
+              <ion-button
+                color="dark"
+                shape="round"
+                (click)="recoveryPass()"
+                size="medium"
+                class="text-uppercase"
+              >
+                {{ 'LOGIN_PAGE.Confirm' | translate}}
+              </ion-button>
+              <ion-button
+                fill="outline"
+                (click)="showRecover()"
+                *ngIf="Recover"
+                size="medium"
+                color="danger"
+                shape="round"
+              >
+                {{ 'LOGIN_PAGE.Close' | translate}}</ion-button
+              >
             </div>
-  
-          <div class="ion-padding" >
-            <ion-list style="background: transparent;">
-              <ion-item  lines="none" >
-                
-                <ion-input   type="email" placeholder="hola5" [(ngModel)]="admin.email">
-                </ion-input>
-              </ion-item>
-            
+          </ion-list>
+        </div>
+      </ion-col>
 
-              <div class="ion-text-center">
-                <ion-button color="dark" shape="round" (click)="recoveryPass()" size="medium" class="text-uppercase">
-                  {{ 'LOGIN_PAGE.Confirm' | translate}}
-                 </ion-button>
-                 <ion-button fill="outline" (click)="showRecover()" *ngIf="Recover" size="medium" color="danger" shape="round"  >
-                  {{ 'LOGIN_PAGE.Close' | translate}}</ion-button>
-              </div>
-            </ion-list>
-            
-            
-          </div>
-        </ion-col>
-
-      
+      <!--IMAGEN-->
       <ion-col size-xs="12" size-sm="12" size-md="8" size-lg="9">
-        <div class="fondo-login" style="background-image: url(../../../assets/img/flower.jpg); background-size: cover;"></div>
+        <div
+          class="fondo-login"
+          style="
+            background-image: url(../../../assets/img/flower.jpg);
+            background-size: cover;
+          "
+        ></div>
       </ion-col>
     </ion-row>
   </ion-grid>
-
 </ion-content>
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-
-
-
-
-
-
-<ion-content>
-  <div style="background-color: #2c2c2c; padding: 50px 0px;" class="ion-text-center">
-    <img src="assets/img/logo.jpg">
-  </div>
-
-
-  <ion-grid class="ion-text-center">
-    <ion-row  *ngIf="!Recover">
-      <ion-col></ion-col>
-      <ion-col>
-        <ion-list>
-          <ion-item>
-            <ion-label position="stacked">  {{'LOGIN_PAGE.User' | translate }}</ion-label>
-            <ion-input type="text" [(ngModel)]="emailLog"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="stacked"> {{'LOGIN_PAGE.Password' | translate }}</ion-label>
-            <ion-input type="password" [(ngModel)]="claveLog"></ion-input>
-          </ion-item>
-        
-
-        </ion-list>
-      </ion-col>
-      <ion-col></ion-col>
-    </ion-row>
-
-    <ion-row lines="none" *ngIf="Recover" class="ion-padding ion-text-center">
-   
-      
-  
-    <ion-col size="12" lines="none">
-      <p color="dark">
-        {{'LOGIN_PAGE.Recover' | translate }}
-      </p>
-  
-      <ion-input class="text-input" type="text" [(ngModel)]="emailLog" placeholder="{{ 'email' }}">
-      </ion-input>
-   
-    </ion-col>
-    <ion-col size="12">
-      <ion-button color="dark" shape="round" (click)="recoveryPass()" size="medium" class="text-uppercase">
-        {{'LOGIN_PAGE.Confirm' | translate }}
-       </ion-button>
-    </ion-col>
-   
-  </ion-row>
-  <ion-button fill="outline" (click)="showRecover()" *ngIf="!Recover" size="medium" color="dark" shape="round"  >
-    {{'LOGIN_PAGE.RecoverPass' | translate }}</ion-button>
-  <ion-button color="success" size="medium"  *ngIf="!Recover" (click)="doLogin()">Entrar</ion-button>
-  <ion-button fill="outline" (click)="showRecover()" *ngIf="Recover" size="medium" color="danger" shape="round"  >
-    {{'LOGIN_PAGE.Close' | translate }}</ion-button>
-  </ion-grid>
-
-</ion-content>-->

@@ -11,6 +11,15 @@
         "Close": "Close",
         "Invalid": "Invalid credentials, please try again",
         "EmailSent": "Email sent, please check your inbox"
+      },
+      "LOGOUT_PAGE": {
+        "Logout_Session": "Logout",
+        "Confirm": "Confirmation",
+        "Confirm_Question": "Are you sure you want to logout?",
+        "Logged_Out_Come_Back": "Logged out. Come back soon!",
+        "Alert_Confirm": "Confirm",
+        "Alert_Cancel": "Cancel"
       }
+      
       
 }
