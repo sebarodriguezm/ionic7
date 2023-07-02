@@ -24,17 +24,27 @@ export class RegisterPage implements OnInit {
   registerAdmin() {
     const msg = this.translate.instant('REGISTER.Loading');
     this.utils.showLoading(msg);
-    this.crud.RegisterAdmin(this.admin, this.admin.password!).then((res) => {
+    this.crud.RegisterAdmin(this.admin, this.admin.password!)
+      .then((res) => {
         this.admin = new UserAdmDto(); // Reiniciar el objeto "term" después de agregarlo
         this.utils.hideLoading();
-        const msg = this.translate.instant('REGISTER.Success');
-        this.utils.message(msg, 1, 'toast-success');
+        const successMsg = this.translate.instant('REGISTER.Success');
+        this.utils.message(successMsg, 1, 'toast-success');
         this.route.navigate(['/login']);
       })
-      .catch((e) => {
-        console.log(e);
+      .catch((error) => {
+        this.utils.hideLoading();
+        if (error === 'Mail already exists in database') {
+          let errMsg = this.translate.instant('REGISTER.Err2');
+          this.utils.message(errMsg, 1, 'toast-error');
+        } else {
+          let errMsg = this.translate.instant('REGISTER.Err');
+          this.utils.message(errMsg, 1, 'toast-error');
+        }
+        console.log(error);
       });
   }
+  
 
   goLogin() {
     this.route.navigate(['/login']);

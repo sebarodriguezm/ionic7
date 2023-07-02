@@ -47,13 +47,13 @@ private suscribeLang: Subscription = new Subscription;
   login() {
     // Validación de datos de entrada
     if (!this.admin || !this.admin.email || !this.admin.password) {
-      const msg = this.translate.instant('LOGIN.MissingData');
-      this.utils.message(msg, 1, 'toast-error');
+      const errMsg = this.translate.instant('LOGIN.MissingData');
+      this.utils.message(errMsg, 1, 'toast-error');
       // Mostrar mensaje de error al usuario o tomar medidas apropiadas
       return;
     }
-  const msg = this.translate.instant('LOGIN.Loading');
-  this.utils.showLoading(msg);
+  const loadingMsg = this.translate.instant('LOGIN.Loading');
+  this.utils.showLoading(loadingMsg);
     this.crud.Login(this.admin)
       .then(() => {
         this.utils.hideLoading();
@@ -61,8 +61,8 @@ private suscribeLang: Subscription = new Subscription;
       })
       .catch((error:any) => {
         this.utils.hideLoading();
-        const msg = this.translate.instant('LOGIN.Error');
-        this.utils.message(msg, 1, 'toast-error');
+        const errMsg = this.translate.instant('LOGIN.Error');
+        this.utils.message(errMsg, 1, 'toast-error');
         // Mostrar mensaje de error al usuario o tomar medidas apropiadas
       });
      

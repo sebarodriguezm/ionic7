@@ -5,7 +5,7 @@ import { MenuPage } from './pages/menu/menu.page';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: '/menu/home',
     pathMatch: 'full'
   },
   {

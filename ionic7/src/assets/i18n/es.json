@@ -17,7 +17,7 @@
     "Enter": "Ingresa tu correo electrónico y contraseña",
     "Login": "Iniciar sesión",
     "Loading": "Iniciando sesión...",
-    "Recover": "Ingresa tu correo electrónico y recupera tu contraseña",
+    "Recover": "¿Olvidaste tu contraseña?",
     "RecoverPass": "Recuperar contraseña",
     "MissingData": "Datos inválidos",
     "Error": "Error al iniciar sesión, inténtalo nuevamente",
@@ -27,7 +27,8 @@
     "Invalid": "Credenciales inválidas, inténtalo nuevamente",
     "EmailSent": "Correo electrónico enviado, revisa tu bandeja de entrada",
     "Change": "Change language",
-    "Register": "Registrarse"
+    "Register": "Registrarse",
+    "Password": "Contraseña"
   },
   "LOGOUT": {
     "Logout_Session": "Cerrar sesión",

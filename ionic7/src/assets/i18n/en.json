@@ -17,7 +17,7 @@
         "Enter": "Enter your email and password",
         "Login": "Login",
         "Loading": "Signing in...",
-        "Recover": "Enter your email and recover your password",
+        "Recover": "Forgot your password?",
         "RecoverPass" : "Recover Password",
         "MissingData": "Missing credentials",
         "Error": "Error signing in, please try again",
@@ -26,7 +26,8 @@
         "Close": "Close",
         "Invalid": "Invalid credentials, please try again",
         "EmailSent": "Email sent, please check your inbox",
-        "Change": "Cambiar idioma"
+        "Change": "Cambiar idioma",
+        "Password": "Password"
        
       },
       "LOGOUT": {
@@ -52,6 +53,7 @@
         "GoLogin": "Go to login",
         "Loading": "Registering administrator...",
         "Success": "Administrator successfully registered"
+        
     },
     "RECOVERY": {
         "EnterEmail": "Enter the email you registered with to recover your password",

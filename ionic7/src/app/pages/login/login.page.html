@@ -20,18 +20,15 @@
         </div>
         <ion-list >
           <ion-item>
-            <ion-label position="stacked" class="label-form">Email</ion-label>
+            <ion-label position="stacked" style="margin-bottom: 10px;">Email</ion-label>
             <ion-input type="text" [(ngModel)]="admin.email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label position="stacked" class="label-form">Password</ion-label>
+            <ion-label position="stacked" class="label-form" style="margin-bottom: 10px;">{{ 'LOGIN.Password'  | translate}}</ion-label>
             <ion-input type="password" [(ngModel)]="admin.password" required></ion-input>
           </ion-item>
           <!--activatable es para dar una especie de pointer, cambia de color el fondo-->
-          <ion-item class="ion-text-center pointer ion-activatable"
-          (click)="showRecover()">
-            {{ 'LOGIN.Recover' | translate}}
-          </ion-item>
+         
 
           <div class="ion-padding">
             <ion-button
@@ -41,6 +38,7 @@
               expand="block"
               fill="outline"
               (click)="login()"
+              size="small"
             >
               {{ 'LOGIN.Confirm' | translate}}
             </ion-button>
@@ -50,6 +48,7 @@
               shape="round"
               expand="block"
               (click)="logout()"
+              size="small"
             >
               {{ 'LOGIN.Close' | translate}}
             </ion-button>
@@ -58,16 +57,25 @@
               expand="block"
               fill="clear"
               shape="round"
+              size="small"
             >
             {{ 'LOGIN.Change' | translate}}
             </ion-button>
           </div>
         </ion-list>
-        <a class="pointer" (click)="goRegister()">{{'LOGIN.Register' | translate}}</a>
+       
+        <ion-item class="ion-text-center pointer ion-activatable"
+        (click)="showRecover()">
+          {{ 'LOGIN.Recover' | translate}}
+        </ion-item>
+        <ion-item class="ion-text-center pointer ion-activatable "
+        (click)="goRegister()">
+        {{'LOGIN.Register' | translate}}
+        </ion-item>
 
       </ion-col>
 
-      <!--LOGOUT-->
+      <!--RECOVER -->
       <ion-col
         *ngIf="Recover"
         size-xs="12"
