@@ -1,9 +1,7 @@
 
 <ion-content>
 
-  <ion-button  (click)="changeLanguage()" expand="block" fill="clear" shape="round">
-    Cambiar idioma
-  </ion-button>
+
   <ion-grid>
     <ion-row>
       <ion-col *ngIf="!Recover" size-xs="12" size-sm="12" size-md="4" size-lg="3">
@@ -15,7 +13,7 @@
 
         <div class="title-login ion-padding ion-text-center">
           <p>
-          {{ 'LOGIN_PAGE.User' | translate}}
+          {{ 'LOGIN_PAGE.Enter' | translate}}
           </p>
         </div>
 
@@ -30,14 +28,17 @@
           </ion-item>
           <p style="cursor:pointer;font-size: .8em !important;color:rgb(0, 0, 0);text-align: right;margin-right: 20px;"
           (click)="showRecover()">
-            hola2
+          {{ 'LOGIN_PAGE.Recover' | translate}}
           </p>
           <div class="ion-padding">
             <ion-button color="primary" size="medium" shape="round" expand="block" (click)="login()">
-            hola3
+              {{ 'LOGIN_PAGE.Confirm' | translate}}
             </ion-button>
             <ion-button color="danger" size="medium" shape="round" expand="block" (click)="logout()">
-              cerrar
+              {{ 'LOGIN_PAGE.Close' | translate}}
+              </ion-button>
+              <ion-button  (click)="changeLanguage()" expand="block" fill="clear" shape="round">
+                Cambiar idioma
               </ion-button>
           </div>
           <!--ion-item color="dark">
@@ -59,7 +60,7 @@
 
       <div class="title-login ion-padding ion-text-center">
               <p>
-                hola4
+                {{ 'LOGIN_PAGE.Recover' | translate}}
               </p>
             </div>
   
@@ -74,10 +75,10 @@
 
               <div class="ion-text-center">
                 <ion-button color="dark" shape="round" (click)="recoveryPass()" size="medium" class="text-uppercase">
-                 hola5
+                  {{ 'LOGIN_PAGE.Confirm' | translate}}
                  </ion-button>
                  <ion-button fill="outline" (click)="showRecover()" *ngIf="Recover" size="medium" color="danger" shape="round"  >
-             hola6</ion-button>
+                  {{ 'LOGIN_PAGE.Close' | translate}}</ion-button>
               </div>
             </ion-list>
             

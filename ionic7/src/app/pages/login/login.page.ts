@@ -101,6 +101,7 @@ private suscribeLang: Subscription = new Subscription;
   }
 
   setOtherLang() {
+    // se obtiene el idioma no seleccionado
     let nonSelected = this.langService.getNonSelectedLanguage();
     if (nonSelected.length) {
       this._otherLang = nonSelected[0];

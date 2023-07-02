@@ -1,9 +1,4 @@
 {
-  "COUNTRY_LIST_PAGE": {
-    "Countries": "Añadir país",
-    "Add": "Agregar",
-    "Search": "Buscar país"
-  },
   "LOGIN_PAGE": {
     "User": "Usuario",
     "Password": "Clave",

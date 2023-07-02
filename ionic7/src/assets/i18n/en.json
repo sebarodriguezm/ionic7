@@ -1,0 +1,16 @@
+{
+    "LOGIN_PAGE": {
+        "User": "User",
+        "Password": "Password",
+        "Enter": "Enter your email and password",
+        "Login": "Login",
+        "Recover": "Enter your email and recover your password",
+        "RecoverPass" : "Recover Password",
+        "Confirm": "Confirm",
+        "Confirmation": "Confirmation",
+        "Close": "Close",
+        "Invalid": "Invalid credentials, please try again",
+        "EmailSent": "Email sent, please check your inbox"
+      }
+      
+}
