@@ -1,5 +1,5 @@
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
@@ -48,6 +48,7 @@ export function customTranslateLoader(http: HttpClient) {
   ],
   bootstrap: [AppComponent],
   exports: [TranslateModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {
   constructor(private afs: AngularFirestore) {
