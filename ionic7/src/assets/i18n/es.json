@@ -27,8 +27,7 @@
     "Invalid": "Credenciales inválidas, inténtalo nuevamente",
     "EmailSent": "Correo electrónico enviado, revisa tu bandeja de entrada",
     "Change": "Change language",
-    "Register": "Registrarse",
-    "Password": "Contraseña"
+    "Register": "Registrarse"
   },
   "LOGOUT": {
     "Logout_Session": "Cerrar sesión",
@@ -64,6 +63,10 @@
     "ThisEmailHasNotBeenFound": "No se ha encontrado este correo electrónico, por favor prueba con otro correo electrónico",
     "InvalidEmail": "Correo electrónico inválido, por favor verifica que el correo electrónico esté escrito correctamente",
     "InvalidOperation": "Operación inválida"
+  },
+  "HOME": {
+    "Title": "Bienvenido",
+    "Subtitle": "¿Qué deseas hacer?"
   }
   
  

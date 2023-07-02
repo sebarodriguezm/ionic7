@@ -13,7 +13,6 @@
     },
     "LOGIN": {
         "User": "User",
-        "Password": "Password",
         "Enter": "Enter your email and password",
         "Login": "Login",
         "Loading": "Signing in...",
@@ -66,7 +65,12 @@
         "ThisEmailHasNotBeenFound": "This email has not been found, please try another email",
         "InvalidEmail": "Invalid email, please check that the email is well written",
         "InvalidOperation": "Invalid operation"
-    }
+    },
+    "HOME": {
+        "Title": "Welcome",
+        "Subtitle": "What do you want to do?"
+      }
       
+    
       
 }

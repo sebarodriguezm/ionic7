@@ -6,19 +6,21 @@
     </ion-toolbar>
   </ion-header>
   
-  <ion-content>
-   
+  <ion-content class="ion-padding">
+    <div class="hero-container">
+      <!-- Contenido del hero -->
+    </div>
     
     <ion-grid>
       <ion-row>
         <ion-col size="12">
           <ion-card>
             <ion-card-header>
-              <ion-card-title>Welcome to the Home Page!</ion-card-title>
+              <ion-card-title>{{ 'HOME.Title' | translate}}</ion-card-title>
             </ion-card-header>
             <ion-card-content>
-              <p>This is a generic home page in Ionic.</p>
-              <p>You can customize it according to your app's requirements.</p>
+              <p>{{ 'HOME.Subtitle' | translate}}</p>
+     
             </ion-card-content>
           </ion-card>
         </ion-col>
