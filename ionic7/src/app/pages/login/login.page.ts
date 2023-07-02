@@ -48,7 +48,7 @@ private suscribeLang: Subscription = new Subscription;
     // Validación de datos de entrada
     if (!this.admin || !this.admin.email || !this.admin.password) {
       const msg = this.translate.instant('LOGIN_PAGE.MissingData');
-      this.utils.message(msg, 3, 'toast-error');
+      this.utils.message(msg, 1, 'toast-error');
       // Mostrar mensaje de error al usuario o tomar medidas apropiadas
       return;
     }
@@ -60,7 +60,8 @@ private suscribeLang: Subscription = new Subscription;
         this.router.navigate(['/menu/home']);
       })
       .catch((error:any) => {
-        console.error('Error durante el inicio de sesión:', error);
+        const msg = this.translate.instant('LOGIN_PAGE.Error');
+        this.utils.message(msg, 1, 'toast-error');
         // Mostrar mensaje de error al usuario o tomar medidas apropiadas
       });
      

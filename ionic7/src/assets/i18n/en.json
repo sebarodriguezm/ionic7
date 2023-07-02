@@ -8,6 +8,7 @@
         "Recover": "Enter your email and recover your password",
         "RecoverPass" : "Recover Password",
         "MissingData": "Missing credentials",
+        "Error": "Error signing in, please try again",
         "Confirm": "Confirm",
         "Confirmation": "Confirmation",
         "Close": "Close",

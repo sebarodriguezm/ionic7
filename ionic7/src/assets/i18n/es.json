@@ -10,6 +10,7 @@
     "MissingData": "Por favor ingresa tu usuario y contraseña",
     "Confirm": "Aceptar",
     "Confirmation": "Confirmación",
+    "Error": "Error durante el inicio de sesión, por favor vuelve a intentarlo",
     "Close": "Cerrar",
     "Invalid": "Credenciales inválidas, por favor vuelve a intentarlo",
     "EmailSent": "Correo enviado, por favor revisa tu bandeja de entrada",
