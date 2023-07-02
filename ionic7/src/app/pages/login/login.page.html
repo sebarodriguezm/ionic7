@@ -1,7 +1,9 @@
 
 <ion-content>
 
-  
+  <ion-button  (click)="changeLanguage()" expand="block" fill="clear" shape="round">
+    Cambiar idioma
+  </ion-button>
   <ion-grid>
     <ion-row>
       <ion-col *ngIf="!Recover" size-xs="12" size-sm="12" size-md="4" size-lg="3">
@@ -13,7 +15,7 @@
 
         <div class="title-login ion-padding ion-text-center">
           <p>
-           hola
+          {{ 'LOGIN_PAGE.User' | translate}}
           </p>
         </div>
 

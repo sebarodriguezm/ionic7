@@ -38,6 +38,7 @@ import { AppComponent } from './app.component';
 
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { CrudService } from './providers/crudservice.service';
+import { SharedModule } from './components/shared.module';
 
 
 
@@ -58,7 +59,7 @@ export function customTranslateLoader(http: HttpClient) {
     AppRoutingModule,
     TranslateModule.forChild(),
     HttpClientModule,
-
+    SharedModule,
     
     TranslateModule.forRoot({
       loader: {

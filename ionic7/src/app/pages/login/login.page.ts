@@ -1,26 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 
 import { LoadingController } from '@ionic/angular';
+import { Subscription } from 'rxjs';
 import { UserAdmDto } from 'src/app/core/dto/user-adm.dto';
 import { CrudService } from 'src/app/providers/crudservice.service';
+import { LanguageService } from 'src/app/providers/languages.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPage  implements OnInit, OnDestroy {
 admin: UserAdmDto = new UserAdmDto();
 Recover: boolean = false;
+public otherLang = '';
+
+private _otherLang = '';
+private suscribeLang: Subscription = new Subscription;
+
   constructor(
     private crud: CrudService<UserAdmDto>,
     private router: Router,
-    private loading: LoadingController
+    private loading: LoadingController,
+    private langService: LanguageService
   ) { }
 
   ngOnInit() {
+    this.langService.initialize();
+
+    this.setOtherLang();
+
+   this.suscribeLang = this.langService.languageChange$
+       .subscribe(() => {
+         this.setOtherLang();
+       });
   }
 
   login() {
@@ -78,5 +94,21 @@ Recover: boolean = false;
         }
         
       });
+  }
+
+  ngOnDestroy() {
+    this.suscribeLang?.unsubscribe();
+  }
+
+  setOtherLang() {
+    let nonSelected = this.langService.getNonSelectedLanguage();
+    if (nonSelected.length) {
+      this._otherLang = nonSelected[0];
+      this.otherLang = this._otherLang.toUpperCase();
+    }
+  }
+
+  changeLanguage() {
+    this.langService.setLanguage(this._otherLang);
   }
 }
