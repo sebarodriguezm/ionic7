@@ -16,7 +16,7 @@
           <img src="../../assets//img/logo.jpg" width="180px" />
         </div>
         <div class="title-login ion-padding ion-text-center">
-          <p>{{ 'LOGIN_PAGE.Enter' | translate}}</p>
+          <p>{{ 'LOGIN.Enter' | translate}}</p>
         </div>
         <ion-list >
           <ion-item>
@@ -30,7 +30,7 @@
           <!--activatable es para dar una especie de pointer, cambia de color el fondo-->
           <ion-item class="ion-text-center pointer ion-activatable"
           (click)="showRecover()">
-            {{ 'LOGIN_PAGE.Recover' | translate}}
+            {{ 'LOGIN.Recover' | translate}}
           </ion-item>
 
           <div class="ion-padding">
@@ -42,7 +42,7 @@
               fill="outline"
               (click)="login()"
             >
-              {{ 'LOGIN_PAGE.Confirm' | translate}}
+              {{ 'LOGIN.Confirm' | translate}}
             </ion-button>
             <ion-button
               color="danger"
@@ -51,7 +51,7 @@
               expand="block"
               (click)="logout()"
             >
-              {{ 'LOGIN_PAGE.Close' | translate}}
+              {{ 'LOGIN.Close' | translate}}
             </ion-button>
             <ion-button
               (click)="changeLanguage()"
@@ -59,11 +59,11 @@
               fill="clear"
               shape="round"
             >
-            {{ 'LOGIN_PAGE.Change' | translate}}
+            {{ 'LOGIN.Change' | translate}}
             </ion-button>
           </div>
         </ion-list>
-        <a class="pointer" (click)="goRegister()">{{'LOGIN_PAGE.Register' | translate}}</a>
+        <a class="pointer" (click)="goRegister()">{{'LOGIN.Register' | translate}}</a>
 
       </ion-col>
 
@@ -82,7 +82,7 @@
           <img src="../../assets//img/logo.jpg" width="180px" />
         </div>
         <div class="title-login ion-padding ion-text-center">
-          <p>{{ 'LOGIN_PAGE.Recover' | translate}}</p>
+          <p>{{ 'LOGIN.Recover' | translate}}</p>
         </div>
         <div class="ion-padding">
           <ion-list style="background: transparent">
@@ -102,7 +102,7 @@
                 size="medium"
                 class="text-uppercase"
               >
-                {{ 'LOGIN_PAGE.Confirm' | translate}}
+                {{ 'LOGIN.Confirm' | translate}}
               </ion-button>
               <ion-button
                 fill="outline"
@@ -112,7 +112,7 @@
                 color="danger"
                 shape="round"
               >
-                {{ 'LOGIN_PAGE.Close' | translate}}</ion-button
+                {{ 'LOGIN.Close' | translate}}</ion-button
               >
             </div>
           </ion-list>

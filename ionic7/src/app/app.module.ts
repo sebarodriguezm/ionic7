@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { CrudService } from './providers/crudservice.service';
 import { SharedModule } from './components/shared.module';
 import { UtilsComponent } from './components/utils/utils.component';
+import { LanguageService } from './providers/languages.service';
 
 
 export function customTranslateLoader(http: HttpClient) {
@@ -40,6 +41,7 @@ export function customTranslateLoader(http: HttpClient) {
   providers: [
     CrudService,
     UtilsComponent,
+    LanguageService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     //cuando sale nullinjector poner el provider options
     { provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig },

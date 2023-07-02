@@ -1,29 +1,68 @@
 {
-  "LOGIN_PAGE": {
+  "MENU": {
+    "Users": "Vendedores",
+    "Admin": "Super administrador",
+    "Clients": "Clientes",
+    "Countries": "Países",
+    "Equipment": "MMD",
+    "Calibration": "Calibración",
+    "Warehouses": "Bancos",
+    "forms": "Formularios",
+    "Emulate": "Emular usuario",
+    "Exit": "Salir"
+  },
+  "LOGIN": {
     "User": "Usuario",
-    "Password": "Clave",
-    "Enter": "Ingresa tu correo y email",
-    "Login": "Entrar",
-    "Recover": "Ingresa tu email y recupera tu contraseña",
-    "RecoverPass" : "Recuperar contraseña",
+    "Password": "Contraseña",
+    "Enter": "Ingresa tu correo electrónico y contraseña",
+    "Login": "Iniciar sesión",
     "Loading": "Iniciando sesión...",
-    "MissingData": "Por favor ingresa tu usuario y contraseña",
+    "Recover": "Ingresa tu correo electrónico y recupera tu contraseña",
+    "RecoverPass": "Recuperar contraseña",
+    "MissingData": "Datos inválidos",
+    "Error": "Error al iniciar sesión, inténtalo nuevamente",
     "Confirm": "Aceptar",
     "Confirmation": "Confirmación",
-    "Error": "Error durante el inicio de sesión, por favor vuelve a intentarlo",
     "Close": "Cerrar",
-    "Invalid": "Credenciales inválidas, por favor vuelve a intentarlo",
-    "EmailSent": "Correo enviado, por favor revisa tu bandeja de entrada",
-    "Change": "Cambiar idioma",
+    "Invalid": "Credenciales inválidas, inténtalo nuevamente",
+    "EmailSent": "Correo electrónico enviado, revisa tu bandeja de entrada",
+    "Change": "Change language",
     "Register": "Registrarse"
   },
-  "LOGOUT_PAGE": {
-    "Logout_Session": "Salir de la sesión",
+  "LOGOUT": {
+    "Logout_Session": "Cerrar sesión",
     "Confirm": "Confirmación",
-    "Confirm_Question": "Está seguro que desea salir de su sesión?",
-    "Logged_Out_Come_Back": "Sesión cerrada, vuelve pronto",
+    "Confirm_Question": "¿Estás seguro de que deseas cerrar sesión?",
+    "Logged_Out_Come_Back": "Sesión cerrada. ¡Regresa pronto!",
     "Alert_Confirm": "Confirmar",
     "Alert_Cancel": "Cancelar"
+  },
+  "REGISTER": {
+    "New": "Registro de nuevos administradores",
+    "Name": "Nombre completo",
+    "Email": "Correo electrónico",
+    "Phone": "Teléfono",
+    "Password": "Contraseña",
+    "Register": "Registrar",
+    "Add": "Administrador registrado exitosamente",
+    "Err": "El correo electrónico ya existe en la base de datos",
+    "Err2": "Ha ocurrido un error",
+    "FieldRequired": "Debes completar todos los campos para crear un administrador",
+    "GoLogin": "Ir a iniciar sesión",
+    "Loading": "Registrando administrador..."
+  },
+  "RECOVERY": {
+    "EnterEmail": "Ingresa el correo electrónico con el que te registraste para recuperar tu contraseña",
+    "Email": "Escribe tu correo electrónico",
+    "Recovery": "Recuperar contraseña",
+    "Login": "Iniciar sesión",
+    "EmailToRecover": "Debes escribir el correo electrónico registrado para recuperar tu contraseña",
+    "PleaseWriteYourEmailCorrectly": "Por favor, escribe tu correo electrónico correctamente",
+    "WeHaveSentYouPasswordRecoveryEmail": "Hemos enviado un correo electrónico de recuperación de contraseña. Accede a tu correo electrónico para poder cambiar la contraseña desde el enlace que te enviamos",
+    "ThisEmailHasNotBeenFound": "No se ha encontrado este correo electrónico, por favor prueba con otro correo electrónico",
+    "InvalidEmail": "Correo electrónico inválido, por favor verifica que el correo electrónico esté escrito correctamente",
+    "InvalidOperation": "Operación inválida"
   }
+  
  
 }

@@ -969,5 +969,19 @@ export class CrudService<TMain, TSub = any, TSub2 = any, TSub3 = any> {
     return this.auth.sendPasswordResetEmail(email);
   }
 
+  RegisterAdmin(user: any, password: string) {
+    console.log(user);
+    return new Promise<void>((resolve, reject) => {
+      this.auth.createUserWithEmailAndPassword(user.email, password)
+        .then(() => {
+          console.log('El usuario se creó correctamente');
+          resolve();
+        })
+        .catch((error) => {
+          console.log('Hubo un error al crear el usuario:', error);
+          reject(error);
+        });
+    });
+  }
 
 }

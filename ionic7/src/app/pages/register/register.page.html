@@ -16,7 +16,7 @@
           <img src="../../assets//img/logo.jpg" width="180px" />
         </div>
         <div class="title-login ion-padding ion-text-center">
-          <p>{{ 'LOGIN_PAGE.Enter' | translate}}</p>
+          <p>{{ 'REGISTER.New' | translate}}</p>
         </div>
         <ion-list >
           <ion-item>
@@ -37,18 +37,18 @@
               shape="round"
               expand="block"
               fill="outline"
-             
+             (click)="add()"
             >
-              {{ 'LOGIN_PAGE.Confirm' | translate}}
+            {{ 'REGISTER.Register' | translate}}
             </ion-button>
             <ion-button
               color="danger"
               size="medium"
               shape="round"
               expand="block"
-            
+            (click)="goLogin()"
             >
-              {{ 'LOGIN_PAGE.Close' | translate}}
+            {{ 'REGISTER.GoLogin' | translate}}
             </ion-button>
           
           </div>

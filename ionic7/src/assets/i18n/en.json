@@ -1,5 +1,17 @@
 {
-    "LOGIN_PAGE": {
+    "MENU": {
+        "Users": "Vendedores",
+        "Admin": "Super admin",
+        "Clients": "Clients",
+        "Countries": "Countries",
+        "Equipment": "MMD",
+        "Calibration": "Calibration",
+        "Warehouses": "Banks",
+        "forms": "Forms",
+        "Emulate": "Emulate user",
+        "Exit": "Exit"
+    },
+    "LOGIN": {
         "User": "User",
         "Password": "Password",
         "Enter": "Enter your email and password",
@@ -14,17 +26,44 @@
         "Close": "Close",
         "Invalid": "Invalid credentials, please try again",
         "EmailSent": "Email sent, please check your inbox",
-        "Change": "Change language",
+        "Change": "Cambiar idioma",
         "Register": "Register"
       },
-      "LOGOUT_PAGE": {
+      "LOGOUT": {
         "Logout_Session": "Logout",
         "Confirm": "Confirmation",
         "Confirm_Question": "Are you sure you want to logout?",
         "Logged_Out_Come_Back": "Logged out. Come back soon!",
         "Alert_Confirm": "Confirm",
         "Alert_Cancel": "Cancel"
-      }
+      },
+      
+    "REGISTER": {
+        "New": "Registration of new administrators",
+        "Name": "Full name",
+        "Email": "Email",
+        "Phone": "Phone",
+        "Password": "Password",
+        "Register": "Register",
+        "Add": "Administrator successfully registered",
+        "Err": "Mail already exists in database",
+        "Err2": "An error has occurred",
+        "FieldRequired": "You must complete all the fields to create an administrator",
+        "GoLogin": "Go to login",
+        "Loading": "Registering administrator..."
+    },
+    "RECOVERY": {
+        "EnterEmail": "Enter the email you registered with to recover your password",
+        "Email": "Write your email",
+        "Recovery": "Recover password",
+        "Login": "Login",
+        "EmailToRecover": "You must write the registered email to recover your password",
+        "PleaseWriteYourEmailCorrectly": "Please write your Email correctly",
+        "WeHaveSentYouPasswordRecoveryEmail": "We have sent you a password recovery email, access your email so you can change the password from the link we send you",
+        "ThisEmailHasNotBeenFound": "This email has not been found, please try another email",
+        "InvalidEmail": "Invalid email, please check that the email is well written",
+        "InvalidOperation": "Invalid operation"
+    }
       
       
 }

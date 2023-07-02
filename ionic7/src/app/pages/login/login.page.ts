@@ -47,12 +47,12 @@ private suscribeLang: Subscription = new Subscription;
   login() {
     // Validación de datos de entrada
     if (!this.admin || !this.admin.email || !this.admin.password) {
-      const msg = this.translate.instant('LOGIN_PAGE.MissingData');
+      const msg = this.translate.instant('LOGIN.MissingData');
       this.utils.message(msg, 1, 'toast-error');
       // Mostrar mensaje de error al usuario o tomar medidas apropiadas
       return;
     }
-  const msg = this.translate.instant('LOGIN_PAGE.Loading');
+  const msg = this.translate.instant('LOGIN.Loading');
   this.utils.showLoading(msg);
     this.crud.Login(this.admin)
       .then(() => {
@@ -60,7 +60,8 @@ private suscribeLang: Subscription = new Subscription;
         this.router.navigate(['/menu/home']);
       })
       .catch((error:any) => {
-        const msg = this.translate.instant('LOGIN_PAGE.Error');
+        this.utils.hideLoading();
+        const msg = this.translate.instant('LOGIN.Error');
         this.utils.message(msg, 1, 'toast-error');
         // Mostrar mensaje de error al usuario o tomar medidas apropiadas
       });
@@ -127,6 +128,6 @@ private suscribeLang: Subscription = new Subscription;
   }
 
   goRegister(){
-    this.router.navigate(['/menu/register']);
+    this.router.navigate(['/register']);
   }
 }
