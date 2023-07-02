@@ -41,6 +41,7 @@ export function customTranslateLoader(http: HttpClient) {
     CrudService,
     UtilsComponent,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    //cuando sale nullinjector poner el provider options
     { provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig },
   ],
   bootstrap: [AppComponent],

@@ -1,0 +1,70 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <!--LOGIN-->
+      <ion-col
+        
+        size-xs="12"
+        size-sm="12"
+        size-md="4"
+        size-lg="3"
+        class="ion-text-center"
+      >
+        <div
+          class="ion-text-center"
+        >
+          <img src="../../assets//img/logo.jpg" width="180px" />
+        </div>
+        <div class="title-login ion-padding ion-text-center">
+          <p>{{ 'LOGIN_PAGE.Enter' | translate}}</p>
+        </div>
+        <ion-list >
+          <ion-item>
+            <ion-label position="stacked" class="label-form">Email</ion-label>
+            <ion-input type="text" [(ngModel)]="admin.email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked" class="label-form">Password</ion-label>
+            <ion-input type="password" [(ngModel)]="admin.password" required></ion-input>
+          </ion-item>
+          <!--activatable es para dar una especie de pointer, cambia de color el fondo-->
+          
+
+          <div class="ion-padding">
+            <ion-button
+              color="primary"
+              size="medium"
+              shape="round"
+              expand="block"
+              fill="outline"
+             
+            >
+              {{ 'LOGIN_PAGE.Confirm' | translate}}
+            </ion-button>
+            <ion-button
+              color="danger"
+              size="medium"
+              shape="round"
+              expand="block"
+            
+            >
+              {{ 'LOGIN_PAGE.Close' | translate}}
+            </ion-button>
+          
+          </div>
+        </ion-list>
+      
+      </ion-col>
+      <!--Imagen-->
+      <ion-col size-xs="12" size-sm="12" size-md="8" size-lg="9">
+        <div
+          class="fondo-login"
+          style="
+            background-image: url(../../../assets/img/fondo-login2.jpg);
+            background-size: cover;
+          "
+        ></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
