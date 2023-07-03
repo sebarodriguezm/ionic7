@@ -28,12 +28,13 @@ export class UtilsComponent  implements OnInit {
   }
 
   // message es no intrusivo solo muestra un mensaje  y desaparece solo 
-  async message(msg:any, time:number, estilo = 'toast-success') {
+  async message(msg:any, time:number, estilo = 'toast-success', color:any) {
     const toast = await this.toast.create({
       message: msg,
       duration: time * 1000,
       position: 'top',
-      cssClass: estilo
+      cssClass: estilo,
+      color: color
     });
 
     toast.present();

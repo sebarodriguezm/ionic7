@@ -29,17 +29,17 @@ export class RegisterPage implements OnInit {
         this.admin = new UserAdmDto(); // Reiniciar el objeto "term" después de agregarlo
         this.utils.hideLoading();
         const successMsg = this.translate.instant('REGISTER.Success');
-        this.utils.message(successMsg, 1, 'toast-success');
+        this.utils.message(successMsg, 1, 'toast-success', 'success');
         this.route.navigate(['/login']);
       })
       .catch((error) => {
         this.utils.hideLoading();
         if (error === 'Mail already exists in database') {
           let errMsg = this.translate.instant('REGISTER.Err2');
-          this.utils.message(errMsg, 1, 'toast-error');
+          this.utils.message(errMsg, 1, 'toast-error', 'danger');
         } else {
           let errMsg = this.translate.instant('REGISTER.Err');
-          this.utils.message(errMsg, 1, 'toast-error');
+          this.utils.message(errMsg, 1, 'toast-error', 'danger');
         }
         console.log(error);
       });
