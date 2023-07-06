@@ -2,8 +2,38 @@
     background-image: url('../../../assets/img/fondo-login2.jpg');
     background-size: cover;
     
-    min-height: 530px;
+    min-height: 550px;
     width: 100%;
  
     
+}
+
+ion-grid {
+    --ion-grid-column-padding: 0px;
+    padding: 0px !important;
+   
+}
+
+#bg{
+    background-color: white !important;
+}
+
+
+ion-label{
+    padding-bottom: 10px;
+}
+
+
+
+.title-login {
+    font-size: 1em;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif !important;
+    color: #000000;
+}
+
+.label-form {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 1.2em !important;
+    color: #000000 !important;
 }
