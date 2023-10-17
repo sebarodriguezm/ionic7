@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { CrudService } from '../providers/crud.service';
 import { UserDto } from '../core/dto/user.dto';
 import { DbTables } from '../core/constants/db-tables.constant';
-import { AuthService } from '../services/auth.service';
+
 import { Storage } from '@ionic/storage-angular';
 
 
@@ -36,7 +36,7 @@ export class LoginPage implements OnInit {
     private alertController: AlertController,
     private navController: NavController,
     public crud: CrudService<UserDto>,
-    private auth: AuthService,
+
     private storage: Storage
     ) {
       this.crud = this.crud.newCrudInstance();
