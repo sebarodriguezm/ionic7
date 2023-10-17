@@ -28,13 +28,13 @@
         <ion-icon slot="start" class="icon" name="call-outline"></ion-icon>
         <ion-label  *ngIf="logged">{{logged.phone}}</ion-label>
       </ion-item>
-      <ion-item lines="full"  *ngIf="logged.sex">
+      <ion-item lines="full"  *ngIf="logged && logged.sex">
         <ion-icon slot="start" class="icon" name="person-outline"></ion-icon>
         <ion-label >{{logged.sex}}</ion-label>
       </ion-item>
-      <ion-item lines="full" *ngIf="logged.birthday">
+      <ion-item lines="full" *ngIf="logged && logged.birthday">
         <ion-icon slot="start" class="icon " name="calendar-outline"></ion-icon>
-        <ion-label >{{logged.birthday}}</ion-label>
+        <ion-label >{{logged.birthday | date:'dd/MM/yyyy' }}</ion-label>
       </ion-item>
       
      
