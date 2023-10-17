@@ -7,8 +7,7 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/comp
 import { UserDto } from '../core/dto/user.dto';
 import { CrudService } from './crud.service';
 import { DbTables } from '../core/constants/db-tables.constant';
-import { UserDefaults } from '../core/constants/user-defualts.constant';
-import { UserAdmDto } from '../core/dto/user-adm.dto';
+
 
 const table = 'usuarios';
 
@@ -23,7 +22,7 @@ export class UserRegistrationService {
 
   constructor(
     private afs: AngularFirestore,
-    private userDataService: CrudService<UserAdmDto>
+    private userDataService: CrudService<UserDto>
   ) {
     this.fireAuth = firebase.default.auth();
 

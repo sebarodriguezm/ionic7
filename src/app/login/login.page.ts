@@ -30,15 +30,10 @@ export class LoginPage implements OnInit {
   id: string;
   constructor(
     private regService: UserRegistrationService,
-    public menuCtrl: MenuController,
-    public toastController: ToastController,
-    public router: Router,
-    public loadingCtrl: LoadingController,
-    private alertController: AlertController,
-    private navController: NavController,
     public crud: CrudService<UserDto>,
     private utils: UtilsService,
-    private storage: Storage
+    private storage: Storage,
+    private alertController: AlertController
     ) {
       this.crud = this.crud.newCrudInstance();
       this.crud.setTable(DbTables.Users);
@@ -70,7 +65,8 @@ export class LoginPage implements OnInit {
   doLogin2() {
     // console.log('Click login');
     this.regService.loginUser(this.emailLog, this.claveLog).then((data:any) => {
-      this.router.navigate(['/profile']);
+      this.utils.goTo('/profile');
+      
     },
       (err:any) => {
         // console.log('Error: login::> ', err);
@@ -81,18 +77,6 @@ export class LoginPage implements OnInit {
   }
 
 
-
-  async presentLoading() {
-    const loading = await this.loadingCtrl.create({
-      message: '',
-      duration: 2000
-    });
-    await loading.present();
-
-    const { role, data } = await loading.onDidDismiss();
-
-    console.log('Loading dismissed!');
-  }
   showRecover(){
     this.Recover = !this.Recover
   }
@@ -108,9 +92,6 @@ export class LoginPage implements OnInit {
       
       console.log('Correo enviado::> ', data);
       this.utils.message('Se ha enviado un correo de recuperación de clave, abra el correo y siga las instrucciones', 4, 'toast-success', 'alert');
-
-     
-      this.router.navigate(['/menu/transport']);
       this.closeRecover();
     },
       (err:any) => {
@@ -203,7 +184,7 @@ export class LoginPage implements OnInit {
         this.user.arraySearch = this.crud.getArraySearchDes(arrySearch);
         console.log('id', this.id)
         this.crud.updateDocument(this.user);
-        this.router.navigate(['/cards']);
+        this.utils.goTo('/profile');
 }
 
 isEmail(email:any) {

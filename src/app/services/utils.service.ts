@@ -16,7 +16,7 @@ export class UtilsService {
     private modalController: ModalController
   ) { }
 
-
+   // ===== Message ========
   async message(msg:any, time = 3, estilo = 'toast-success', icon?: string) {
     const toast = await this.toastController.create({
       message: msg,
@@ -29,6 +29,7 @@ export class UtilsService {
     toast.present();
   }
 
+   // ===== Loading ========
   async presentLoading() {
     const loading = await this.loadingCtrl.create({
       message: '',
@@ -64,7 +65,7 @@ export class UtilsService {
       toast.present();
     }
 
-
+   // ===== Navigate ========
     goTo(url:string) {
       this.router.navigateByUrl(url)
     }

@@ -1,21 +1,3 @@
 export const DbTables = {
-  UsersAdm: 'users-adm',
-  Company:'company',
-  Terms: 'terms',
-  Category: 'category',
-  Cards: 'cards',
-  Notifications: 'notification',
-  Events: 'event',
-  Vistas: 'vistas',
-  Notas: 'notas',
-  Customers: 'customers-adm',
-  Answer:'answer',
-  Wall:'wall',
-  Courses:'course',
-  Programs: 'program',
   Users: 'users',
-  Country: 'country',
-  Position: 'position',
-  Message: 'message',
-  Version: 'version'
-};
+ };

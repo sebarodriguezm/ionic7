@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 
@@ -10,17 +11,21 @@ import { UserRegistrationService } from 'src/app/providers/user.registration.ser
     providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-    constructor(private userService: UserRegistrationService, private router: Router) { }
+    constructor(private userService: UserRegistrationService,
+         private router: Router,
+         private auth: AngularFireAuth) { }
 
-    canActivate(): Promise<boolean> {
-        return new Promise((resolve, reject) => {
-            this.userService.getCurrentUser()
-                .then(user => {
-                    resolve(true);
-                }, err => {
-                    this.router.navigate(['/login']);
-                    resolve(false);
-                })
-        })
-    }
+    canActivate(): Observable<boolean> {
+        return this.auth.authState.pipe(
+          take(1),
+          map(user => {
+            if (user) {
+              return true; // El usuario está autenticado
+            } else {
+              this.router.navigate(['/login']);
+              return false; // El usuario no está autenticado
+            }
+          })
+        );
+      }
 }
