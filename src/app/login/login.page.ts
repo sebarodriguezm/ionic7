@@ -71,7 +71,7 @@ export class LoginPage implements OnInit {
   doLogin2() {
     // console.log('Click login');
     this.regService.loginUser(this.emailLog, this.claveLog).then((data:any) => {
-      this.router.navigate(['/cards']);
+      this.router.navigate(['/profile']);
     },
       (err:any) => {
         // console.log('Error: login::> ', err);
