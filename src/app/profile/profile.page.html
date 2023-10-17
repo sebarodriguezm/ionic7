@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar class="ion-text-center">
+    <ion-buttons slot="start">
+      <ion-back-button text=" "></ion-back-button>
+    </ion-buttons>
+    <img id="logo" src="../../assets/img/logo-demo.png">
+    <ion-buttons slot="end">
+      <ion-button color="light" [routerLink]="['/logout']">
+        <ion-icon class="animate__animated animate__zoomIn" slot="start" color="danger" name="exit-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-list>
+     
+      <ion-item  lines="full">
+        <ion-icon slot="start" class="icon"  name="person-outline"></ion-icon>
+        <ion-label *ngIf="logged">{{logged.fullName}}</ion-label>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-icon slot="start" class="icon" name="mail-open-outline"></ion-icon>
+        <ion-label  *ngIf="logged">{{logged.email}}</ion-label>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-icon slot="start" class="icon" name="call-outline"></ion-icon>
+        <ion-label  *ngIf="logged">{{logged.phone}}</ion-label>
+      </ion-item>
+      <ion-item lines="full"  *ngIf="logged.sex">
+        <ion-icon slot="start" class="icon" name="person-outline"></ion-icon>
+        <ion-label >{{logged.sex}}</ion-label>
+      </ion-item>
+      <ion-item lines="full" *ngIf="logged.birthday">
+        <ion-icon slot="start" class="icon " name="calendar-outline"></ion-icon>
+        <ion-label >{{logged.birthday}}</ion-label>
+      </ion-item>
+      
+     
+     </ion-list>
+  </ion-card>
+</ion-content>

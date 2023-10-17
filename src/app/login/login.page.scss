@@ -1,0 +1,45 @@
+.fondo-login {
+    height: 100%;
+    min-height: 750px;
+}
+
+ion-grid {
+    --ion-grid-column-padding: 0px;
+    padding: 0px !important;
+   
+}
+
+#bg{
+    background-color: white !important;
+}
+
+.title-login {
+    font-size: 1em;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif !important;
+    color: #000000;
+}
+
+.label-form {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 1.2em !important;
+    color: #000000 !important;
+}
+
+ .logo{
+    padding-top: 70px;
+    padding-bottom: 70px;
+ }
+
+ .icon{
+    font-size: 50px;
+ }
+
+ .pad-top-50{
+    padding-top: 50px;
+ }
+
+ .itemFecha {
+    --padding-start: 0px;
+  }
+  

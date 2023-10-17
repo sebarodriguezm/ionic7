@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color="danger" fill="clear" (click)="close()">
+        <ion-icon name="close-circle-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding content-backg" color="light">
+
+  <div class="ion-padding">
+    <ion-list class="radius-popup">
+      <ion-item lines="full">
+        <ion-label class="ion-text-uppercase title-list">Nueva opción de respuesta</ion-label>
+      </ion-item>
+
+      <ion-list>
+        <ion-radio-group value="biff" [(ngModel)]="optionType" (ionChange)="changeOption()">
+          <ion-grid>
+            <ion-row>
+              <ion-col *ngFor="let item of types" size-xs="6" >
+                <ion-item lines="none" class="custom-item">
+                  <ion-label text-wrap>{{item.value}}</ion-label>
+                  <ion-radio slot="start" [value]="item"></ion-radio>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          
+        </ion-radio-group>
+      </ion-list>
+
+      <ion-item lines="none" *ngIf="optionType?.id === 3">
+        <ion-label position="stacked">Escribe una respuesta</ion-label>
+        <ion-input type="text" [(ngModel)]="option.title"></ion-input>
+      </ion-item>
+
+      <div class="ion-text-center">
+        <ion-label text-wrap position="stacked">¿Qué código tiene la pregunta a la que se quiere linkear esta respuesta?</ion-label>
+      </div>
+      <ion-item lines="none">
+       
+        <div class="ion-padding-top ">
+          <span *ngFor="let item of categories">
+            <ion-button  fill="clear" slot="start" *ngIf="item.id !== category.id" (click)="goCategory(item)">
+              <ion-icon [name]="item.icono" [color]="item.color" slot="start"></ion-icon> {{ item.name }}
+            </ion-button>
+            <ion-button  [color]="item.color" slot="start" *ngIf="item.id === category.id">
+              <ion-icon [name]="item.icono"  slot="start"></ion-icon> {{ item.name }}
+            </ion-button>
+          </span>
+          
+        </div>        
+      </ion-item>
+
+      <ion-item>
+        <h4>Asociar respuesta a siguiente pregunta</h4>
+      </ion-item>
+      <ion-item *ngFor="let item of cards" (click)="selectedCards(item)" lines="full" class="pointer">
+        <ion-icon [name]="item.categoryIcon" [color]="categoryColor" slot="start"></ion-icon>
+        <ion-label text-wrap>
+          {{ item.question }}
+        </ion-label>
+        <ion-icon name="checkmark-circle-outline" color="success" slot="end" *ngIf="item.id === option.cardsId"></ion-icon>
+      </ion-item>
+    </ion-list>
+    
+  </div>  
+
+</ion-content>
+<ion-footer >
+  <ion-toolbar class="ion-text-center content-backg" color="ligth">
+    <ion-button color="dark" (click)="add()" [disabled]="!optionType">
+      <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+      {{nameBottom}}
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

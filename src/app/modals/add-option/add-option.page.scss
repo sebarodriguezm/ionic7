@@ -1,0 +1,33 @@
+.content-backg{
+    --ion-color-base: #edf1f7!important;
+}
+.efect-form{
+	animation-duration: 1.25s;
+  	animation-name: efect;
+  	animation-iteration-count: 1;
+  	animation-direction: alternate;
+}
+@keyframes efect {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }  
+    to {
+        transform: translateY(0);
+        opacity: 1;
+   }
+}
+ion-input, ion-select {
+    background-color: #FFFFFF;
+    border: #EAEAEA 3px solid;
+    border-radius: 0px; 
+    margin-top: 10px;
+    padding-left: 10px !important;
+    color: #7c7c7c !important;
+}
+
+.custom-item {
+    ion-radio {
+      margin-right: 2px;
+    }
+  }

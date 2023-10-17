@@ -1,0 +1,207 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import '@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+//-----------------FUENTES-------------------
+h1, h2, h3, h4, h5 {
+    font-family: 'Quicksand', sans-serif;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+ion-label {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.parrafo {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.title-h1 {
+  font-size: 2em;
+}
+
+ion-title {
+  font-size: 1.5em;
+}
+
+//----------HEADER----------------
+ion-header {
+  height: 55px;
+  border: none !important; 
+  box-shadow: none !important; 
+  font-family: 'Quicksand', sans-serif;
+  
+}
+
+ion-toolbar {
+  height: 55px;
+}
+
+ion-searchbar {
+  --border-radius: 0px !important;
+  --box-shadow: none !important;
+  --background: #F4F4F4 !important;
+  width: 400px !important;
+  padding-left: 15px !important;
+}
+
+//---------------MENU------------------
+.menu {
+  background-color: #32404e !important; 
+  height: 92%; 
+  ion-list {
+    border: none;
+    padding-bottom: 0px;
+  }
+  ion-label {
+    margin: 15px 0px;;
+  }
+}
+
+#menu-lateral{
+  width: 290px;
+  }
+
+//----------------CONTENT---------------
+ion-content {
+    --background: #ffffff !important;
+}
+
+  .pointer{
+    cursor: pointer;
+  }
+ 
+  ion-modal {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin: auto;
+    width: 30%;
+    height: 100vh !important;
+    border: 1px solid black; 
+  }
+
+  .modal-right {
+    --min-height: 100vh !important;
+    transform: translateX(110%) !important; 
+  }
+  
+  ion-list {
+    border: #F4F4F4 1px solid;
+    ion-list-header {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: normal;
+      font-size: 1.3em;
+    }
+    padding-bottom: 20px;
+  }
+
+  ion-input{
+    background-color: #FFFFFF;
+    border: #EAEAEA 2px solid;
+    border-radius: 0px; 
+    //margin-top: 10px;
+    padding-left: 10px !important;
+    color: #7c7c7c !important;
+    font-family: 'Montserrat', sans-serif;
+}
+
+ion-select{
+  border: #EAEAEA 2px solid;
+}
+
+ion-textarea{
+  border: #EAEAEA 2px solid;
+}
+
+
+.toast-success {
+  --background:#10dc60 !important;
+  --color:#FFF !important;
+ }
+ 
+ .toast-danger {
+  --background:#f04141 !important;
+  --color:#FFF !important;
+ }
+ 
+ .toast-info {
+  --background:#0cd1e8 !important;
+  --color:#FFF !important;
+ }
+ 
+ .toast-warning {
+  --background:#ffce00 !important;
+  --color:rgb(66, 66, 66) !important;
+ }
+ 
+
+
+.efect-form{
+	animation-duration: 1.25s;
+  	animation-name: efect;
+  	animation-iteration-count: 1;
+  	animation-direction: alternate;
+}
+
+@keyframes efect {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }  
+    to {
+        transform: translateY(0);
+        opacity: 1;
+   }
+}
+
+quill-editor{
+  border: #EAEAEA 2px solid;
+  height: 400px;
+}
+
+img{
+  width: 200px;
+}
+
+.pad-top-50{
+  padding-top: 50px;
+}
+
+.pad-top-30{
+  padding-top: 30px;
+}
+
+.pad-top-20{
+  padding-top: 20px;
+}
+
+.pad-top-250{
+  padding-top: 250px;
+}
