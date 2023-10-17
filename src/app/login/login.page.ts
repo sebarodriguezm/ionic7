@@ -7,6 +7,7 @@ import { UserDto } from '../core/dto/user.dto';
 import { DbTables } from '../core/constants/db-tables.constant';
 
 import { Storage } from '@ionic/storage-angular';
+import { UtilsService } from '../services/utils.service';
 
 
 
@@ -36,7 +37,7 @@ export class LoginPage implements OnInit {
     private alertController: AlertController,
     private navController: NavController,
     public crud: CrudService<UserDto>,
-
+    private utils: UtilsService,
     private storage: Storage
     ) {
       this.crud = this.crud.newCrudInstance();
@@ -64,8 +65,6 @@ export class LoginPage implements OnInit {
 
   ionViewWillEnter() {
     localStorage.clear();
-    this.menuCtrl.close();
-    this.menuCtrl.enable(false);
   }
 
   doLogin2() {
@@ -75,23 +74,13 @@ export class LoginPage implements OnInit {
     },
       (err:any) => {
         // console.log('Error: login::> ', err);
-        const Message = 'LOGIN_PAGE.Invalid';
-          this.message(Message,  4, 'toast-warning');
+        const Message = 'Datos incorrectos';
+        this.utils.message(Message,  4, 'toast-warning', 'alert');
       });
 
   }
 
-  async message(msg:any, time = 3, estilo = 'toast-success', icon?: string) {
-    const toast = await this.toastController.create({
-      message: msg,
-      duration: time * 1000,
-      position: 'top',
-      cssClass: estilo,
-      icon: icon
-    });
 
-    toast.present();
-  }
 
   async presentLoading() {
     const loading = await this.loadingCtrl.create({
@@ -118,7 +107,8 @@ export class LoginPage implements OnInit {
     this.regService.resetPassword(this.emailLog).then((data: any) => {
       
       console.log('Correo enviado::> ', data);
-      this.message('Se ha enviado un correo de recuperación de clave, abra el correo y siga las instrucciones', 4, 'toast-success');
+      this.utils.message('Se ha enviado un correo de recuperación de clave, abra el correo y siga las instrucciones', 4, 'toast-success', 'alert');
+
      
       this.router.navigate(['/menu/transport']);
       this.closeRecover();
@@ -129,22 +119,22 @@ export class LoginPage implements OnInit {
         let msg: string;
         if (err['code'] == "auth/wrong-password") {
           msg = 'Credenciales inválidas, por favor vuelve a intentarlo';
-          this.message(msg, 4, 'toast-warning');
+          this.utils.message(msg, 4, 'toast-warning');
         
         }
         else if (err['code'] == "auth/invalid-email") {
           msg = 'Correo inválido, por favor revise que el correo esté bien escrito';
-          this.message(msg, 4, 'toast-warning');
+          this.utils.message(msg, 4, 'toast-warning');
         
         }
         else if (err['code'] == "auth/user-disabled") {
           msg = 'Este usuario se encuentra deshabilitado';
-        this.message(msg, 4, 'toast-warning');
+        this.utils.message(msg, 4, 'toast-warning');
 
         }
         else if (err['code'] == "auth/user-not-found") {
           msg = 'Este correo no está registrado en nuestro sistema';
-        this.message(msg, 4, 'toast-warning');
+        this.utils.message(msg, 4, 'toast-warning');
 
         }
 
@@ -194,16 +184,16 @@ export class LoginPage implements OnInit {
 
   register(){
     if (!this.user.fullName||!this.user.email||!this.user.sex) {
-      this.message('Completa todos los datos', 3, 'toast-warning');
+      this.utils.message('Completa todos los datos', 3, 'toast-warning');
     }
     else {
       this.regService.signupUser(this.user, this.claveLog).then((data: any) => {
         //console.log('create::> ', data);
-        this.message('Usuario creado exitosamente', 3, 'toas-success', 'checkmark-done');
+        this.utils.message('Usuario creado exitosamente', 3, 'toas-success', 'checkmark-done');
        
       }).catch((err: string) => {
         //console.log('createUser>err', err);
-        this.message('Error al Registrar: ' + err, 8, 'toast-error');
+        this.utils.message('Error al Registrar: ' + err, 8, 'toast-error');
       });
       
   }
