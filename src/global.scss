@@ -52,7 +52,7 @@ ion-title {
 
 //----------HEADER----------------
 ion-header {
-  height: 55px;
+  height: 120px;
   border: none !important; 
   box-shadow: none !important; 
   font-family: 'Quicksand', sans-serif;
@@ -60,8 +60,15 @@ ion-header {
 }
 
 ion-toolbar {
-  height: 55px;
+  height: 120px;
 }
+
+#logo{
+	padding-left: 10px;
+  padding-top: 5px;
+    width: 120px;
+}
+
 
 ion-searchbar {
   --border-radius: 0px !important;
