@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content color="tertiary">
   <ion-grid>
     <ion-row>
       <ion-col
@@ -14,21 +14,21 @@
         </div>
 
         <!----------------------LOGIN------------------->
-        <ion-list *ngIf="showInput">
-          <ion-item lines="none">
+        <ion-list *ngIf="showInput" >
+          <ion-item lines="none" color="tertiary">
             <ion-icon
               slot="end"
               name="close-circle-outline"
-              color="danger"
+              color="light"
               (click)="showLogin()"
             ></ion-icon>
           </ion-item>
 
-          <ion-item lines="none">
+          <ion-item lines="none" color="tertiary">
             <ion-label position="stacked" class="label-form">Email</ion-label>
             <ion-input type="text" [(ngModel)]="emailLog"></ion-input>
           </ion-item>
-          <ion-item lines="none">
+          <ion-item lines="none" color="tertiary">
             <ion-label position="stacked" class="label-form"
               >Contraseña</ion-label
             >
@@ -46,20 +46,20 @@
 
         <ion-row class="ion-padding-horizontal">
           <ion-col
-            size="6"
+            size="12"
             class="ion-text-center"
             *ngIf="!showReg && !showInput"
           >
-            <ion-button color="secondary" (click)="showLogin()">
+            <ion-button color="warning" (click)="showLogin()" expand="block">
               Ingresar
             </ion-button>
           </ion-col>
           <ion-col
-            size="6"
+            size="12"
             class="ion-text-center"
             *ngIf="!showReg && !showInput"
           >
-            <ion-button color="primary" (click)="showRegister()">
+            <ion-button color="primary" (click)="showRegister()" expand="block">
               Registrarse
             </ion-button>
           </ion-col>
@@ -73,7 +73,7 @@
           </ion-col>
 
           <ion-col size="6" class="ion-text-center pad-top-50" *ngIf="!showReg">
-            <ion-icon class="icon" color="danger" name="logo-google"></ion-icon>
+            <ion-icon class="icon" color="secondary" name="logo-google"></ion-icon>
           </ion-col>
           <ion-col size="6" class="ion-text-center pad-top-50" *ngIf="!showReg">
             <ion-icon
@@ -88,7 +88,7 @@
             class="ion-text-center pad-top-30"
             *ngIf="!showReg"
           >
-            <ion-button fill="clear" shape="round" routerLink="/terms">
+            <ion-button fill="clear" shape="round" routerLink="/terms" color="light">
               Ver términos y condiciones
             </ion-button>
           </ion-col>
