@@ -8,6 +8,7 @@ import { ProductsPageRoutingModule } from './products-routing.module';
 
 import { ProductsPage } from './products.page';
 import { ComponentSharedModule } from 'src/app/components/components-shared.module';
+import { QuillModule } from 'ngx-quill';
 
 @NgModule({
   imports: [
@@ -15,7 +16,12 @@ import { ComponentSharedModule } from 'src/app/components/components-shared.modu
     FormsModule,
     IonicModule,
     ProductsPageRoutingModule,
-    ComponentSharedModule
+    ComponentSharedModule,
+    QuillModule.forRoot({
+      modules: {
+        syntax: false
+      }
+    }),
   ],
   declarations: [ProductsPage]
 })

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, NavParams } from '@ionic/angular';
 
 import { ProductDetailPageRoutingModule } from './product-detail-routing.module';
 
@@ -15,6 +15,7 @@ import { ProductDetailPage } from './product-detail.page';
     IonicModule,
     ProductDetailPageRoutingModule
   ],
-  declarations: [ProductDetailPage]
+  declarations: [ProductDetailPage],
+  providers: [NavParams]
 })
 export class ProductDetailPageModule {}

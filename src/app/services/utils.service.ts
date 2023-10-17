@@ -1,12 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastController, LoadingController, AlertController, NavController, ModalController, ModalOptions, ToastOptions } from '@ionic/angular';
+import { ToastController, LoadingController, AlertController, NavController, ModalController, ModalOptions, ToastOptions, IonContent } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UtilsService {
-
+  @ViewChild(IonContent, { static: false })
+  content!: IonContent;
+  showForm = false;
+  efect = '';
   constructor(
     public toastController: ToastController,
     public router: Router,
@@ -59,18 +62,31 @@ export class UtilsService {
   }
 
 
-    // ===== Toast ========
-    async presentToast(opts: ToastOptions) {
-      const toast = await this.toastController.create(opts);
-      toast.present();
-    }
+   // ===== Toast ========
+   async presentToast(opts: ToastOptions) {
+    const toast = await this.toastController.create(opts);
+    toast.present();
+  }
 
    // ===== Navigate ========
-    goTo(url:string) {
-      this.router.navigateByUrl(url)
+    goTo(url:string , id?:any) {
+      this.router.navigateByUrl(`${url}/${id}`);
     }
 
     loader() {
       return this.loadingCtrl;
+    }
+
+    scrollToTop() {
+      this.content.scrollToTop();
+    }
+
+    animation(){
+      if(this.showForm){
+        this.efect='efect-form';
+      }else{
+        this.efect='';
+        
+      }
     }
 }

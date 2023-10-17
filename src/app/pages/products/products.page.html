@@ -1,4 +1,86 @@
 <app-header></app-header>
+
 <ion-content>
-  
+  <ion-grid >
+    <ion-row>
+    
+      <ion-col size="12" [ngClass]="efect" *ngIf="logged.isAdmin" >
+        <div class="ion-text-center ion-padding-bottom">
+          <h2 >Crear producto</h2>
+        </div>
+     
+        <ion-item lines="none">
+          <ion-label position="stacked">Nombre</ion-label>
+          <ion-input class="input"  [(ngModel)]="product.name" type="text" placeholder="Nombre del producto"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label position="stacked">Extracto</ion-label>
+          <quill-editor class="input-sin-pad-left" [(ngModel)]="product.extract" style="height: 200px;"></quill-editor>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label position="stacked">Descripción</ion-label>
+          <quill-editor class="input-sin-pad-left" [(ngModel)]="product.description" style="height: 300px;"></quill-editor>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label position="stacked">Precio</ion-label>
+          <ion-input class="input" [(ngModel)]="product.price"  placeholder="Ingresa el precio">
+          </ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label position="stacked">Precio con descuento <ion-text color="danger">
+            Opcional
+          </ion-text></ion-label>
+          <ion-input class="input" [(ngModel)]="product.discountPrice"  placeholder="Ingresa el precio con descuento">
+          </ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-select [(ngModel)]="product.category"  aria-label="Fruit" interface="popover" placeholder="Selecciona categoria">
+            <ion-select-option  *ngFor="let item of categories" [value]="item">{{item}}</ion-select-option>
+          </ion-select>
+          <ion-button (click)="uploadPhoto()" color="primary" shape="round">Imagen
+            <ion-icon name="cloud-download"></ion-icon>
+          </ion-button>
+        </ion-item>
+       
+        <div class="ion-text-center ion-padding-top ">
+          <ion-button (click)="addProduct()"  color="success" shape="round">
+            Crear producto
+          </ion-button>
+        
+        </div>  
+       
+      </ion-col>
+
+      <ion-col size="12" [ngClass]="efect">
+        <ion-list>
+          <ion-item lines="full">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="4"><b>Nombre</b></ion-col>
+                <ion-col size="4"><b>Precio</b></ion-col>
+                <ion-col size="4"><b>Categoría</b></ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+        
+      
+          <ion-item lines="full" class="pointer" *ngFor="let product of productList" >
+            <ion-grid>
+              <ion-row  >
+                <ion-col size="4">
+                  <ion-text (click)="verProduct(product)" class="text-small" color="dark"><b>{{ product.name }}</b></ion-text>
+                </ion-col>
+                <ion-col size="4">
+                  <ion-text (click)="verProduct(product)" class="text-small" color="secondary"><b>{{ product.price }}</b></ion-text>
+                </ion-col>
+                <ion-col size="4">
+                  <ion-text (click)="verProduct(product)" class="text-small"><b>{{ product.category }}</b></ion-text>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

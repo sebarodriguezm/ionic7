@@ -13,7 +13,11 @@ import { HeaderComponent } from './header/header.component';
   imports: [
     CommonModule,
     IonicModule,
-    QuillModule
+    QuillModule.forRoot({
+      modules: {
+        syntax: false
+      }
+    }),
 
   ],
   declarations: [
