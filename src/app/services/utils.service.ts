@@ -70,7 +70,7 @@ export class UtilsService {
 
    // ===== Navigate ========
     goTo(url:string , id?:any) {
-      this.router.navigateByUrl(`${url}/${id}`);
+      this.router.navigateByUrl(`${url}`);
     }
 
     loader() {

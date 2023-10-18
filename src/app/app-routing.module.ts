@@ -24,10 +24,12 @@ const routes: Routes = [
   },
   {
     path: 'products',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./pages/products/products.module').then( m => m.ProductsPageModule)
   },
   {
     path: 'product-detail/:id',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./pages/product-detail/product-detail.module').then( m => m.ProductDetailPageModule)
   },
 
