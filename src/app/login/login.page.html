@@ -1,7 +1,7 @@
 <ion-content color="tertiary">
   <ion-grid>
     <ion-row>
-      <ion-col *ngIf="!Recover" size-xs="12" size-sm="12" size-md="4" size-lg="3">
+      <ion-col *ngIf="!Recover" size-xs="12" size-sm="12" size-md="4" size-lg="12" size-xl="12">
         <!------------------lOGO---------------->
         <div class="ion-text-center logo" *ngIf="img">
           <img src="../../assets//img/logo.png" />
@@ -12,7 +12,7 @@
         <ion-item color="dark" class="ion-padding-vertical">
           <ion-icon slot="end" name="close-circle-outline" color="light" (click)="showLogin()"></ion-icon>
       <ion-label position="stacked" color="light">Email</ion-label>
-      <ion-input aria-label="Custom input" placeholder="Email" class="custom" [(ngModel)]="emailLog" type="email"></ion-input>
+      <ion-input aria-label="Custom input" placeholder="Email"  [(ngModel)]="emailLog" type="email"></ion-input>
     <ion-label position="stacked" color="light">Contraseña</ion-label>
     <ion-input type="password" [(ngModel)]="claveLog" (keyup.enter)="doLogin2()"></ion-input>
 
@@ -82,52 +82,56 @@
       <!---------------REGISTRAR---------------------->
       <ion-col size="12" *ngIf="showReg">
         <div class="ion-text-center">
-          <img src="../../assets//img/logo-demo.jpg" width="250px" />
+          <img src="../../assets//img/logo.png" width="250px" />
         </div>
         <ion-list>
-          <ion-item lines="none">
-            <ion-icon slot="end" name="close-circle-outline" color="danger" (click)="showRegister()"></ion-icon>
+          <ion-item lines="none"  color="tertiary">
+            <ion-icon slot="end" name="close-circle-outline" color="light" (click)="showRegister()"></ion-icon>
           </ion-item>
-          <ion-list-header class="ion-text-center">
+          <ion-list-header class="ion-text-center"  color="tertiary">
             <ion-label>Ingresa tus datos para registrarte</ion-label>
           </ion-list-header>
 
-          <ion-item lines="none">
+          <ion-item lines="none"  color="tertiary">
             <ion-label position="stacked" class="label-form">Email</ion-label>
-            <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+            <ion-input aria-label="Custom input" type="text" [(ngModel)]="user.email"></ion-input>
           </ion-item>
-          <ion-item lines="none">
+          <ion-item lines="none"  color="tertiary">
             <ion-label position="stacked" class="label-form">Teléfono</ion-label>
-            <ion-input type="text" [(ngModel)]="user.phone"></ion-input>
+            <ion-input aria-label="Custom input" type="text" [(ngModel)]="user.phone"></ion-input>
           </ion-item>
-          <ion-item lines="none">
+          <ion-item lines="none"  color="tertiary">
             <ion-label position="stacked" class="label-form">Contraseña</ion-label>
-            <ion-input type="text" [(ngModel)]="claveLog"></ion-input>
+            <ion-input aria-label="Custom input" type="text" [(ngModel)]="claveLog"></ion-input>
           </ion-item>
-          <ion-item lines="none">
+          <ion-item lines="none"  color="tertiary">
             <ion-label position="stacked" class="label-form">Nombre</ion-label>
-            <ion-input type="text" [(ngModel)]="user.fullName"></ion-input>
+            <ion-input aria-label="Custom input" type="text" [(ngModel)]="user.fullName"></ion-input>
           </ion-item>
-          <ion-item lines="none">
-            <ion-label position="stacked">Género</ion-label>
+          <ion-item lines="none"  color="tertiary">
+            <ion-label color="dark" position="stacked" class="label-form">Género</ion-label>
             <ion-select [(ngModel)]="user.sex">
               <ion-select-option value="masculino">Masculino</ion-select-option>
               <ion-select-option value="femenino">Femenino</ion-select-option>
               <ion-select-option value="no-binario">No binario</ion-select-option>
             </ion-select>
           </ion-item>
-          <ion-item>
-            <ion-label position="stacked">Fecha de Nacimiento</ion-label>
-            <ion-item class="itemFecha">
+          <ion-item  color="tertiary">
+            <ion-label color="dark" position="stacked" class="label-form">Fecha de Nacimiento</ion-label>
+            <ion-item class="itemFecha" color="tertiary">
               <ion-input [(ngModel)]="user.birthday" type="text" placeholder="dd/mm/yyyy"></ion-input>
-              <ion-icon class="icon ion-padding-start" name="calendar" (click)="openCalendar()" color="secondary"></ion-icon>
+              <ion-icon class="icon ion-padding-start" name="calendar" (click)="openCalendar()" color="primary"></ion-icon>
             </ion-item>
           </ion-item>
 
-          <div class="ion-text-center ion-padding-top">
-            <ion-button color="success" (click)="register()" [disabled]="!validator()"> Registrarse
-            </ion-button>
-          </div>
+          <ion-item color="tertiary" class="ion-text-center">
+            <div class="ion-text-center"  >
+              <ion-button color="success" (click)="register()" [disabled]="!validator()">
+                Registrarse
+              </ion-button>
+            </div>
+            
+          </ion-item>
         </ion-list>
       </ion-col>
     </ion-row>

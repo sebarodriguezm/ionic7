@@ -33,13 +33,15 @@ export class LoginPage implements OnInit {
     public crud: CrudService<UserDto>,
     private utils: UtilsService,
     private storage: Storage,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private menuCtrl: MenuController
     ) {
       this.crud = this.crud.newCrudInstance();
       this.crud.setTable(DbTables.Users);
   }
 
   async ngOnInit() {
+   this.cerrarMenu();
     let datos = this.storage.get('currentUser');
     console.log('datos', datos)
    let id = await this.regService.verifyLogin();
@@ -57,9 +59,14 @@ export class LoginPage implements OnInit {
    } 
   */ 
   }
+  cerrarMenu() {
+    this.menuCtrl.close();
+    this.menuCtrl.enable(false);
+  }
 
   ionViewWillEnter() {
     localStorage.clear();
+    this.cerrarMenu();
   }
 
   doLogin2() {

@@ -43,8 +43,11 @@ ion-grid {
     --padding-start: 0px;
   }
   
-  ion-input.custom {
-    --background: #373737;
-    --color: #fff !important;
-    --placeholder-color: #ffffff !important;
+  ion-input {
+    --background: #ffffff;
+    --color: #000000 !important;
+    --placeholder-color: #000000 !important;
+    --border-radius: 50px !important;
   }
+
+  
