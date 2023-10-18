@@ -120,7 +120,6 @@ ion-content {
   }
   
   ion-list {
-    border: #F4F4F4 1px solid;
     ion-list-header {
       font-family: 'Quicksand', sans-serif;
       font-weight: normal;
@@ -130,13 +129,8 @@ ion-content {
   }
 
   ion-input{
-    background-color: #FFFFFF;
-    border: #EAEAEA 2px solid;
-    border-radius: 0px; 
-    //margin-top: 10px;
-    padding-left: 10px !important;
-    color: #7c7c7c !important;
-    font-family: 'Montserrat', sans-serif;
+    --border-radius: 20px; 
+    --padding-start: 15px !important;
 }
 
 ion-select{
