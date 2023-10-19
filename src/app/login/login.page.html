@@ -42,12 +42,14 @@
           <img src="../../assets//img/logo.png" />
         </div>
         
-        <div *ngIf="showInput">
+        <ion-item lines="none"  color="tertiary">
+          <ion-label color="dark"> <b>Ingresa tus datos</b></ion-label>
+          <ion-icon slot="end" name="close-circle-outline" color="light" (click)="showLogin()"></ion-icon>
+        </ion-item>
+
           <ion-item lines="none"  color="tertiary">
-              <ion-title class="title" color="dark"><b>Ingresa tus datos</b></ion-title>
-            <ion-icon slot="end" name="close-circle-outline" color="light" (click)="showLogin()"></ion-icon>
             <ion-label class="ion-padding-bottom" position="stacked" color="dark">Email</ion-label>
-            <ion-input aria-label="Custom input" placeholder="Email"  [(ngModel)]="emailLog" type="email"></ion-input>
+          <ion-input aria-label="Custom input" [(ngModel)]="emailLog" type="email"></ion-input>
 
             <ion-label class="ion-padding-bottom" position="stacked" color="dark">Contraseña</ion-label>
             <ion-input aria-label="Custom input" type="password" [(ngModel)]="claveLog" (keyup.enter)="doLogin2()"></ion-input>
@@ -57,7 +59,7 @@
               Ver términos y condiciones
            </ion-button>
           </div>
-        </div>
+       
       </ion-col>
       <!------------------REGISTRAR----------------->
       <ion-col *ngIf="showReg" size-xs="12" size-sm="12" size-md="4" size-lg="12" size-xl="12">
