@@ -128,10 +128,14 @@ ion-content {
     padding-bottom: 20px;
   }
 
-  ion-input{
-    --border-radius: 20px; 
-    --padding-start: 15px !important;
-}
+  ion-input {
+    border-radius: 10px; 
+    background: rgba(255, 255, 255, 0.7); 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    color: black !important;
+    --padding-start: 10px !important;
+  }
 
 ion-select{
   border: #EAEAEA 2px solid;
@@ -204,5 +208,5 @@ img{
 }
 
 .pad-top-250{
-  padding-top: 250px;
+  padding-top: 250px !important;
 }

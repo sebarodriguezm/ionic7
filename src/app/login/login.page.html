@@ -1,137 +1,109 @@
 <ion-content color="tertiary">
   <ion-grid>
     <ion-row>
-      <ion-col *ngIf="!Recover" size-xs="12" size-sm="12" size-md="4" size-lg="12" size-xl="12">
-        <!------------------lOGO---------------->
-        <div class="ion-text-center logo" *ngIf="img">
+      <!-------------Inicio---------------------->
+      <ion-col *ngIf="!Recover && !showInput && !showReg" size-xs="12" size-sm="12" size-md="4" size-lg="12" size-xl="12">
+
+         <div class="ion-text-center logo-container" *ngIf="img">
           <img src="../../assets//img/logo.png" />
         </div>
 
-        <!----------------------LOGIN------------------->
-      <div *ngIf="showInput">
-        <ion-item color="dark" class="ion-padding-vertical">
-          <ion-icon slot="end" name="close-circle-outline" color="light" (click)="showLogin()"></ion-icon>
-      <ion-label position="stacked" color="light">Email</ion-label>
-      <ion-input aria-label="Custom input" placeholder="Email"  [(ngModel)]="emailLog" type="email"></ion-input>
-    <ion-label position="stacked" color="light">Contraseña</ion-label>
-    <ion-input type="password" [(ngModel)]="claveLog" (keyup.enter)="doLogin2()"></ion-input>
+      </ion-col>
 
-    <ion-button fill="clear" (click)="showRecover()">
-      <span>Recupera tu contraseña</span>
-    </ion-button>
-    </ion-item>
-   </div>
-       
-        <ion-row class="ion-padding-horizontal" *ngIf="!showInput">
-          <ion-col size="12" class="ion-text-center" *ngIf="!showReg && !showInput">
-            <ion-button color="warning" (click)="showLogin()" expand="block">
+      <ion-col *ngIf="!Recover && !showInput && !showReg" size-xs="12" size-sm="12" size-md="4" size-lg="12" size-xl="12" class="ion-text-center pad-top-30">
+        <ion-row>
+          <ion-col size="12">
+            <ion-button color="warning" (click)="showLogin()">
               Ingresar
             </ion-button>
           </ion-col>
-          <ion-col size="12" class="ion-text-center" *ngIf="!showReg && !showInput">
-            <ion-button color="primary" (click)="showRegister()" expand="block">
+          <ion-col size="12" class="ion-padding-top">
+            <ion-button color="primary" (click)="showRegister()">
               Registrarse
             </ion-button>
           </ion-col>
-
-          <ion-col size="12" class="ion-text-center pad-top-30" *ngIf="!showReg">
-            <ion-label>Ingresa con tus redes sociales</ion-label>
-          </ion-col>
-
-          <ion-col size="6" class="ion-text-center pad-top-50" *ngIf="!showReg">
-            <ion-icon class="icon" color="primary" name="logo-google"></ion-icon>
-          </ion-col>
-          <ion-col size="6" class="ion-text-center pad-top-50" *ngIf="!showReg">
-            <ion-icon class="icon" color="dark" name="logo-facebook"></ion-icon>
-          </ion-col>
-
-          <ion-col size="12" class="ion-text-center pad-top-30" *ngIf="!showReg">
-            <ion-button fill="clear" shape="round" routerLink="/terms" color="light">
-               Ver términos y condiciones
-            </ion-button>
-          </ion-col>
         </ion-row>
+      
+        <div class="ion-padding-top">
+          <ion-label>Ingresa con tus redes sociales</ion-label>
+        </div>
+        <div class="ion-text-center pad-top-50">
+          <ion-icon class="icon" color="primary" name="logo-google"></ion-icon>
+          <ion-icon class="icon" color="dark" name="logo-facebook"></ion-icon>
+        </div>
+        <ion-button fill="clear" shape="round" routerLink="/terms" color="light">
+          Ver términos y condiciones
+       </ion-button>
       </ion-col>
 
-      <!------------RECUPERAR CONTRASEÑA----------------->
-      <ion-col *ngIf="Recover" size-xs="12" size-sm="12" size-md="4" size-lg="3">
-        <div class="ion-text-center">
-          <img src="../../assets//img/logo-demo.jpg" width="250px" />
+      <!------------------LOGIN----------------->
+      <ion-col *ngIf="!Recover && showInput && !showReg" size-xs="12" size-sm="12" size-md="4" size-lg="12" size-xl="12">
+
+        <div class="ion-text-center logo-container" *ngIf="img">
+          <img src="../../assets//img/logo.png" />
         </div>
-        <div class="title-login ion-padding ion-text-center">
-          <p>Ingresa tu email y recupera tu contraseña</p>
-        </div>
-        <div class="ion-padding">
-          <ion-list>
-            <ion-item lines="none">
-              <ion-label position="stacked">Escribe tu email</ion-label>
-              <ion-input type="email" class="label-form" [(ngModel)]="emailLog">
-              </ion-input>
-            </ion-item>
-            <div class="ion-text-center ion-padding">
-              <ion-button color="primary" size="medium" shape="round" expand="block" (click)="recoveryPass()"> Confirmar
-              </ion-button>
-              <ion-button color="medium" size="small" shape="round" fill="clear" (click)="showRecover()">
-                <span>Volver</span>
-              </ion-button>
-            </div>
-          </ion-list>
+        
+        <div *ngIf="showInput">
+          <ion-item class="ion-padding-vertical" color="tertiary">
+              <ion-title class="title" color="dark"><b>Ingresa tus datos</b></ion-title>
+            <ion-icon slot="end" name="close-circle-outline" color="light" (click)="showLogin()"></ion-icon>
+            <ion-label class="ion-padding-bottom" position="stacked" color="dark">Email</ion-label>
+            <ion-input aria-label="Custom input" placeholder="Email"  [(ngModel)]="emailLog" type="email"></ion-input>
+
+            <ion-label class="ion-padding-bottom" position="stacked" color="dark">Contraseña</ion-label>
+            <ion-input aria-label="Custom input" type="password" [(ngModel)]="claveLog" (keyup.enter)="doLogin2()"></ion-input>
+          </ion-item>
+          <div class="ion-text-center">
+            <ion-button fill="clear" shape="round" routerLink="/terms" color="light">
+              Ver términos y condiciones
+           </ion-button>
+          </div>
         </div>
       </ion-col>
+      <!------------------REGISTRAR----------------->
+      <ion-col *ngIf="showReg" size-xs="12" size-sm="12" size-md="4" size-lg="12" size-xl="12">
 
-      <!---------------REGISTRAR---------------------->
-      <ion-col size="12" *ngIf="showReg">
         <div class="ion-text-center" style="background-color: black;">
           <img src="../../assets//img/logo.png" width="250px" />
         </div>
- 
-          <ion-item lines="none"  color="tertiary">
-            <ion-icon slot="end" name="close-circle-outline" color="light" (click)="showRegister()"></ion-icon>
-          </ion-item>
-          <ion-list-header class="ion-text-center"  color="tertiary">
-            <ion-label color="dark"> <b> Ingresa tus datos para registrarte</b></ion-label>
-          </ion-list-header>
 
-          <ion-item lines="none"  color="tertiary">
-            <ion-label position="stacked" class="label-form">Email</ion-label>
-            <ion-input aria-label="Custom input" type="text" [(ngModel)]="user.email" class="input"></ion-input>
-          </ion-item>
-          <ion-item lines="none"  color="tertiary">
-            <ion-label position="stacked" class="label-form">Teléfono</ion-label>
-            <ion-input aria-label="Custom input" type="text" [(ngModel)]="user.phone"></ion-input>
-          </ion-item>
-          <ion-item lines="none"  color="tertiary">
-            <ion-label position="stacked" class="label-form">Contraseña</ion-label>
-            <ion-input aria-label="Custom input" type="text" [(ngModel)]="claveLog"></ion-input>
-          </ion-item>
-          <ion-item lines="none"  color="tertiary">
-            <ion-label position="stacked" class="label-form">Nombre</ion-label>
-            <ion-input aria-label="Custom input" type="text" [(ngModel)]="user.fullName"></ion-input>
-          </ion-item>
-          <ion-item lines="none"  color="tertiary">
-            <ion-label color="dark" position="stacked" class="label-form">Género</ion-label>
-            <ion-select [(ngModel)]="user.sex">
-              <ion-select-option value="masculino">Masculino</ion-select-option>
-              <ion-select-option value="femenino">Femenino</ion-select-option>
-              <ion-select-option value="no-binario">No binario</ion-select-option>
-            </ion-select>
-          </ion-item>
-          <ion-item  color="tertiary">
-            <ion-label color="dark" position="stacked" class="label-form">Fecha de Nacimiento</ion-label>
-            <ion-item class="itemFecha" color="tertiary">
-              <ion-input [(ngModel)]="user.birthday" type="text" placeholder="dd/mm/yyyy"></ion-input>
-              <ion-icon class="icon ion-padding-start" name="calendar" (click)="openCalendar()" color="light"></ion-icon>
-            </ion-item>
-          </ion-item>
+        <ion-item lines="none"  color="tertiary">
+          <ion-icon slot="end" name="close-circle-outline" color="light" (click)="showRegister()"></ion-icon>
+        </ion-item>
+        <ion-list-header class="ion-text-center"  color="tertiary">
+          <ion-title class="title" color="dark"><b>Ingresa tus datos</b></ion-title>
+        </ion-list-header>
 
-      <div class="ion-text-center ion-padding-vertical" color="tertiary">
-        <ion-button color="success" (click)="register()" size="medium" [disabled]="!validator()">
-          Registrarse
-        </ion-button>
-      
-      </div>
-              
-  
+        <ion-item lines="none"  color="tertiary">
+          <ion-label class="ion-padding-bottom" position="stacked" color="dark">Email</ion-label>
+          <ion-input aria-label="Custom input" [(ngModel)]="user.email" type="email"></ion-input>
+
+          <ion-label class="ion-padding-bottom" position="stacked" color="dark">Teléfono</ion-label>
+          <ion-input aria-label="Custom input" [(ngModel)]="user.phone" type="email"></ion-input>
+
+          <ion-label class="ion-padding-bottom" position="stacked" color="dark">Contraseña</ion-label>
+          <ion-input aria-label="Custom input" [(ngModel)]="claveLog" type="password"></ion-input>
+
+          <ion-label class="ion-padding-bottom" position="stacked" color="dark">Nombre</ion-label>
+          <ion-input aria-label="Custom input" [(ngModel)]="user.fullName" type="text"></ion-input>
+
+          <ion-label class="ion-padding-bottom" position="stacked" color="dark">Género</ion-label>
+          <ion-select [(ngModel)]="user.sex">
+            <ion-select-option value="masculino">Masculino</ion-select-option>
+            <ion-select-option value="femenino">Femenino</ion-select-option>
+            <ion-select-option value="no-binario">No binario</ion-select-option>
+          </ion-select>
+
+          <ion-label class="ion-padding-bottom" position="stacked" color="dark">Fecha de nacimiento</ion-label>
+          <ion-input aria-label="Custom input" [(ngModel)]="user.birthday" type="date"></ion-input>
+      <!--    <ion-icon class="icon ion-padding-start" name="calendar" (click)="openCalendar()" color="light"></ion-icon>-->
+        </ion-item>
+        <div class="ion-text-center ion-padding-vertical" color="tertiary">
+          <ion-button color="success" (click)="register()" size="medium" [disabled]="!validator()">
+            Registrarse
+          </ion-button>
+        </div>
+
       </ion-col>
     </ion-row>
   </ion-grid>

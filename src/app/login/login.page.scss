@@ -1,58 +1,18 @@
-.fondo-login {
-    height: 100%;
-    min-height: 750px;
+.logo-container {
+  padding-top: 80px;
+  padding-bottom: 70px;
+  background-color: black;
+  clip-path: circle(40% at center); /* Aplicar forma redonda */
 }
 
 ion-grid {
-    --ion-grid-column-padding: 0px;
-    padding: 0px !important;
-   
+  --ion-grid-column-padding: 0px;
+  padding: 0px !important;
+ 
 }
 
-#bg{
-    background-color: white !important;
+.icon{
+  font-size: 50px;
+  margin-right: 30px; 
+  margin-left: 30px; 
 }
-
-.title-login {
-    font-size: 1em;
-    font-weight: 300;
-    font-family: 'Open Sans', sans-serif !important;
-    color: #000000;
-}
-
-.label-form {
-    font-family: 'Open Sans', sans-serif !important;
-    font-size: 1.2em !important;
-    color: #000000 !important;
-}
-
- .logo{
-    padding-top: 70px;
-    padding-bottom: 70px;
- }
-
- .icon{
-    font-size: 50px;
- }
-
- .pad-top-50{
-    padding-top: 50px;
- }
-
- .itemFecha {
-    --padding-start: 0px;
-  }
-  
-  ion-input {
-    --background: #ffffff;
-    --color: #000000 !important;
-    --placeholder-color: #000000 !important;
-    --border-radius: 50px !important;
-  }
-
-  .input{
-    height: 1px;
-  }
-  ion-item{
-    --border-width: 0px;
-  }
