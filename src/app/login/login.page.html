@@ -23,16 +23,13 @@
           </ion-col>
         </ion-row>
       
-        <div class="ion-padding-top">
+        <div class="pad-top-50">
           <ion-label>Ingresa con tus redes sociales</ion-label>
         </div>
-        <div class="ion-text-center pad-top-50">
+        <div class="ion-text-center pad-top-50 ion-padding-bottom">
           <ion-icon class="icon" color="primary" name="logo-google"></ion-icon>
           <ion-icon class="icon" color="dark" name="logo-facebook"></ion-icon>
         </div>
-        <ion-button fill="clear" shape="round" routerLink="/terms" color="light">
-          Ver términos y condiciones
-       </ion-button>
       </ion-col>
 
       <!------------------LOGIN----------------->
@@ -71,9 +68,9 @@
         <ion-item lines="none"  color="tertiary">
           <ion-icon slot="end" name="close-circle-outline" color="light" (click)="showRegister()"></ion-icon>
         </ion-item>
-        <ion-list-header class="ion-text-center"  color="tertiary">
+        <ion-item class="ion-text-center"  color="tertiary">
           <ion-title class="title" color="dark"><b>Ingresa tus datos</b></ion-title>
-        </ion-list-header>
+        </ion-item>
 
         <ion-item lines="none"  color="tertiary">
           <ion-label class="ion-padding-bottom" position="stacked" color="dark">Email</ion-label>
@@ -108,3 +105,8 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+<ion-footer class="ion-text-center">
+    <ion-button fill="clear" shape="round" routerLink="/terms" color="dark">
+      Ver términos y condiciones
+   </ion-button>
+</ion-footer>
