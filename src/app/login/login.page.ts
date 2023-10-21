@@ -1,16 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { UserRegistrationService } from '../providers/user.registration.service';
-import { MenuController, ToastController, LoadingController, NavController, AlertController } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { MenuController, AlertController } from '@ionic/angular';
 import { CrudService } from '../providers/crud.service';
 import { UserDto } from '../core/dto/user.dto';
 import { DbTables } from '../core/constants/db-tables.constant';
-
 import { Storage } from '@ionic/storage-angular';
 import { UtilsService } from '../services/utils.service';
-
-
-
 
 @Component({
   selector: 'app-login',
@@ -69,10 +64,10 @@ export class LoginPage implements OnInit {
     this.cerrarMenu();
   }
 
-  doLogin2() {
+  login() {
     // console.log('Click login');
     this.regService.loginUser(this.emailLog, this.claveLog).then((data:any) => {
-      this.utils.goTo('/home');
+      this.utils.goTo('/profile');
       
     },
       (err:any) => {
@@ -88,18 +83,13 @@ export class LoginPage implements OnInit {
     this.Recover = !this.Recover
   }
 
-  closeRecover(){
-    this.Recover = false;
-   
-  }
-
   recoveryPass() {
 
     this.regService.resetPassword(this.emailLog).then((data: any) => {
       
       console.log('Correo enviado::> ', data);
       this.utils.message('Se ha enviado un correo de recuperación de clave, abra el correo y siga las instrucciones', 4, 'toast-success', 'alert');
-      this.closeRecover();
+      this.showRecover();
     },
       (err:any) => {
        

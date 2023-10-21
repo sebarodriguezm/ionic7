@@ -22,6 +22,7 @@
             </ion-button>
           </ion-col>
         </ion-row>
+
       <ion-card class="ion-margin-horizontal ion-padding-bottom card">
         <div class="pad-top-50">
           <ion-label color="dark" class="title">Ingresa con tus redes sociales</ion-label>
@@ -51,10 +52,10 @@
           <ion-input aria-label="Custom input" [(ngModel)]="emailLog" type="email"></ion-input>
 
             <ion-label class="ion-padding-bottom" position="stacked" color="dark">Contraseña</ion-label>
-            <ion-input aria-label="Custom input" type="password" [(ngModel)]="claveLog" (keyup.enter)="doLogin2()"></ion-input>
+            <ion-input aria-label="Custom input" type="password" [(ngModel)]="claveLog" (keyup.enter)="login()"></ion-input>
           </ion-item>
           <div class="ion-text-center ion-padding-vertical">
-            <ion-button shape="round" (click)="doLogin2()" color="primary">
+            <ion-button shape="round" (click)="login()" color="primary">
               Entrar
            </ion-button>
           </div>
