@@ -23,7 +23,7 @@ export class UserDto {
   deviceLogin?:any;
   deviceAll?:any;
   arraySearch?:any = [];
-
+  photo?: any;
   sex?:string;
   birthday?:number;
   commune?:string;
