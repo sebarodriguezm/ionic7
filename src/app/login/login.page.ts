@@ -19,7 +19,7 @@ export class LoginPage implements OnInit {
   public disableButton = false;
   showInput: boolean = false;
   showReg: boolean = false;
-  img: boolean = true;
+
   selectedDate: number ;
   user:UserDto = new UserDto();
   id: string;
@@ -62,7 +62,7 @@ export class LoginPage implements OnInit {
   isValidPhoneNumber(phone: string): boolean {
     return this.phonePattern.test(phone);
   }
-  
+
   cerrarMenu() {
     this.menuCtrl.close();
     this.menuCtrl.enable(false);
@@ -137,7 +137,6 @@ export class LoginPage implements OnInit {
 
   showRegister(){
     this.showReg = ! this.showReg;
-    this.img = !this.img
   }
 
   async openCalendar() {
