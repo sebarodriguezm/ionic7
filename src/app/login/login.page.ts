@@ -24,6 +24,9 @@ export class LoginPage implements OnInit {
   user:UserDto = new UserDto();
   id: string;
   namePattern = /^[A-Za-z]+ [A-Za-z]+$/;
+  phonePattern = /^\d{9}$/;
+
+
   constructor(
     private regService: UserRegistrationService,
     public crud: CrudService<UserDto>,
@@ -55,6 +58,11 @@ export class LoginPage implements OnInit {
    } 
   */ 
   }
+
+  isValidPhoneNumber(phone: string): boolean {
+    return this.phonePattern.test(phone);
+  }
+  
   cerrarMenu() {
     this.menuCtrl.close();
     this.menuCtrl.enable(false);

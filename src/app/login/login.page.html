@@ -77,10 +77,13 @@
 
         <ion-item lines="none"  color="tertiary">
           <ion-label class="ion-padding-bottom" position="stacked" color="dark">Email</ion-label>
-          <ion-input aria-label="Custom input" [(ngModel)]="user.email" type="email"></ion-input>
+<ion-input aria-label="Custom input" [(ngModel)]="user.email" type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"></ion-input>
+<p *ngIf="user.email && user.email.length > 4 && !user.email.match('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}')" style="color: rgb(255, 255, 255);">Ingresa una dirección de correo válida</p>
 
-          <ion-label class="ion-padding-bottom" position="stacked" color="dark">Teléfono</ion-label>
-          <ion-input aria-label="Custom input" [(ngModel)]="user.phone" type="email"></ion-input>
+<ion-label class="ion-padding-bottom" position="stacked" color="dark">Teléfono</ion-label>
+<ion-input aria-label="Custom input" [(ngModel)]="user.phone" type="tel"></ion-input>
+<p *ngIf="user.phone && user.phone.length >= 5 && !isValidPhoneNumber(user.phone)" color="red">Ingresa un número de teléfono válido de 9 dígitos</p>
+
 
           <ion-label class="ion-padding-bottom" position="stacked" color="dark">Contraseña</ion-label>
           <ion-input aria-label="Custom input" [(ngModel)]="claveLog" type="password"></ion-input>
