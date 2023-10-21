@@ -36,12 +36,19 @@ export class UserRegistrationService {
                  }); */
   }
 
-  signupUser(user:any, password: string) {
+  signupUser(user:any, password: string, fullname?: string, phone?: string, email?: string, userType?: string, birthday?:number) {
 
     return this.fireAuth.createUserWithEmailAndPassword(user.email, password)
     .then((newUser: { user: { uid: string | undefined; }; }) => {
-      user.id = newUser.user.uid;
       //console.log('signupUser>newUser, user', newUser, user);
+      let user: UserDto = {
+        id: newUser.user.uid,
+        email: email,
+        fullName: fullname,
+        phone: phone,
+        birthday: birthday
+   
+      };
       return this.userDataService.copyToCollection(user);     
 
       let th = this;

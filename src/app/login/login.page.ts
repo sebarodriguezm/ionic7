@@ -173,7 +173,7 @@ export class LoginPage implements OnInit {
       this.utils.message('Completa todos los datos', 3, 'toast-warning');
     }
     else {
-      this.regService.signupUser(this.user, this.claveLog).then((data: any) => {
+      this.regService.signupUser(this.user, this.claveLog, this.user.fullName, this.user.phone, this.user.email, this.user.sex, this.user.birthday).then((data: any) => {
         //console.log('create::> ', data);
         this.utils.message('Usuario creado exitosamente', 3, 'toas-success', 'checkmark-done');
        
