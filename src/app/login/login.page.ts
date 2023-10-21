@@ -72,7 +72,7 @@ export class LoginPage implements OnInit {
   doLogin2() {
     // console.log('Click login');
     this.regService.loginUser(this.emailLog, this.claveLog).then((data:any) => {
-      this.utils.goTo('/products');
+      this.utils.goTo('/home');
       
     },
       (err:any) => {

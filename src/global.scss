@@ -82,10 +82,7 @@ ion-searchbar {
 .menu {
   background-color: #32404e !important; 
   height: 92%; 
-  ion-list {
-    border: none;
-    padding-bottom: 0px;
-  }
+ 
   ion-label {
     margin: 15px 0px;;
   }
@@ -128,7 +125,7 @@ ion-content {
     padding-bottom: 20px;
   }
 
-  ion-input {
+  ion-input, ion-select {
     border-radius: 10px; 
     background: rgba(255, 255, 255, 0.7); 
     padding: 10px; 
@@ -209,4 +206,8 @@ img{
 
 .pad-top-250{
   padding-top: 250px !important;
+}
+
+.footer{
+  background-color: black;
 }

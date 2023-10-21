@@ -25,7 +25,7 @@
 </ion-split-pane>
 
 
-<ion-tabs *ngIf="logged.isAdmin">
+<ion-tabs *ngIf="logged && logged.isAdmin">
 
   <ion-tab-bar slot="bottom" color="dark"  >
     <ion-tab-button tab="products" *ngIf="!logged.isAdmin">
