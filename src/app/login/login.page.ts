@@ -183,7 +183,6 @@ export class LoginPage implements OnInit {
       });
       
   }
-   this.user.isAdmin = false;
         let arrySearch: any = [];
         arrySearch.push(this.user.fullName);
         this.user.arraySearch = this.crud.getArraySearchDes(arrySearch);
