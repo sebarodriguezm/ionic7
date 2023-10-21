@@ -86,10 +86,13 @@
           <ion-input aria-label="Custom input" [(ngModel)]="claveLog" type="password"></ion-input>
 
           <ion-label class="ion-padding-bottom" position="stacked" color="dark">Nombre</ion-label>
-          <ion-input aria-label="Custom input" [(ngModel)]="user.fullName" type="text"></ion-input>
+          <ion-input aria-label="Custom input" [(ngModel)]="user.fullName" type="text" pattern="^[A-Za-z]+ [A-Za-z]+$"></ion-input>
+          <p *ngIf="user && user.fullName && user.fullName.length >= 3 && user.fullName && !user.fullName.match(namePattern)" color="light">Ingresa un nombre y un apellido</p>
+          
+          
 
           <ion-label class="ion-padding-bottom" position="stacked" color="dark">Género</ion-label>
-          <ion-select [(ngModel)]="user.sex">
+          <ion-select [(ngModel)]="user.sex" label="">
             <ion-select-option value="masculino">Masculino</ion-select-option>
             <ion-select-option value="femenino">Femenino</ion-select-option>
             <ion-select-option value="no-binario">No binario</ion-select-option>

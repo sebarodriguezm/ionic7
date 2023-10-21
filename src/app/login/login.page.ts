@@ -23,6 +23,7 @@ export class LoginPage implements OnInit {
   selectedDate: number ;
   user:UserDto = new UserDto();
   id: string;
+  namePattern = /^[A-Za-z]+ [A-Za-z]+$/;
   constructor(
     private regService: UserRegistrationService,
     public crud: CrudService<UserDto>,
