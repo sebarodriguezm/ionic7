@@ -1,17 +1,11 @@
+<app-header></app-header>
 <ion-content [fullscreen]="true">
   <ion-grid fixed>
     <ion-row>
-      <ion-col size="6">
-        <ion-card>
+      <ion-col size="6" *ngFor="let category of categories">
+        <ion-card >
           <ion-card-content>
-            Awesome content
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col size="6">
-        <ion-card>
-          <ion-card-content>
-            Awesome content
+            {{category}}
           </ion-card-content>
         </ion-card>
       </ion-col>

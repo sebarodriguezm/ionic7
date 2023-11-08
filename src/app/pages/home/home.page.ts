@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-
+  categories: string[] = ['Despensa', 'Hogar', 'Dulces y chocolate', 'Snacks', 'Pastas', 'Productos en conserva', 'Huevos', 'Desayuno',];
   constructor() { }
 
   ngOnInit() {
