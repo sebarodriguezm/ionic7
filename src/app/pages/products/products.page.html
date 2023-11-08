@@ -14,14 +14,6 @@
           <ion-input class="input"  [(ngModel)]="product.name" type="text" placeholder="Nombre del producto"></ion-input>
         </ion-item>
         <ion-item lines="none">
-          <ion-label position="stacked">Extracto</ion-label>
-          <quill-editor class="input-sin-pad-left" [(ngModel)]="product.extract" style="height: 200px;"></quill-editor>
-        </ion-item>
-        <ion-item lines="none">
-          <ion-label position="stacked">Descripción</ion-label>
-          <quill-editor class="input-sin-pad-left" [(ngModel)]="product.description" style="height: 300px;"></quill-editor>
-        </ion-item>
-        <ion-item lines="none">
           <ion-label position="stacked">Precio</ion-label>
           <ion-input class="input" [(ngModel)]="product.price"  placeholder="Ingresa el precio">
           </ion-input>
@@ -33,6 +25,11 @@
           <ion-input class="input" [(ngModel)]="product.discountPrice"  placeholder="Ingresa el precio con descuento">
           </ion-input>
         </ion-item>
+        <ion-item lines="none">
+          <ion-label position="stacked">Descripción</ion-label>
+          <quill-editor class="input-sin-pad-left" [(ngModel)]="product.description" style="height: 300px;"></quill-editor>
+        </ion-item>
+        
         <ion-item lines="none">
           <ion-select [(ngModel)]="product.category"  aria-label="Fruit" interface="popover" placeholder="Selecciona categoria">
             <ion-select-option  *ngFor="let item of categories" [value]="item">{{item}}</ion-select-option>
