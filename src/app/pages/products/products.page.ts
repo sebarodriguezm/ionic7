@@ -12,6 +12,7 @@ import { DbTables } from 'src/app/core/constants/db-tables.constant';
 import { UtilsService } from 'src/app/services/utils.service';
 import { UserDto } from 'src/app/core/dto/user.dto';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { categoryDto } from 'src/app/core/dto/category.dto';
 @Component({
   selector: 'app-products',
   templateUrl: './products.page.html',
@@ -33,12 +34,16 @@ export class ProductsPage implements OnInit {
     private utils: UtilsService,
     private crud: CrudService<ProductDto>,
     private userService: CrudService<UserDto>,
+    private crudCategory: CrudService<categoryDto>
   ) {
     this.crud = this.crud.newCrudInstance();
     this.crud.setTable(DbTables.Products);
 
     this.userService = this.userService.newCrudInstance();
     this.userService.setTable(DbTables.Users); 
+
+    this.crudCategory = this.crudCategory.newCrudInstance();
+    this.crudCategory.setTable(DbTables.Categories); 
   }
 
   ngOnInit() {
