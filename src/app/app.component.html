@@ -1,25 +1,5 @@
 <ion-split-pane contentId="content" >
-  <ion-menu side="start" contentId="content" id="menu-lateral" >
-    
-    <ion-content class="ion-text-center">
-      <div class="ion-text-center back-logo" id="img">
-        <ion-img id="logo" style="width: 60%; height: 55px;"  src="../../assets/img/logo-demo.png"></ion-img>
-      </div> 
-      <div class="menu">
-        <ion-list mode="ios" lines="full" >
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-            <ng-container >
-              <ion-item lines="none" color="primary"  [routerDirection]="'root'" [routerLink]="[p.url]">
-                <ion-icon slot="start" [name]="p.icon" ></ion-icon>
-                <ion-label >{{ p.title}}</ion-label>
-              </ion-item>
-            </ng-container>
-          </ion-menu-toggle>
-        </ion-list>
-      </div>
-    </ion-content>
-  
-  </ion-menu>
+
 
   <ion-router-outlet id="content" main></ion-router-outlet>
 </ion-split-pane>
