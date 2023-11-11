@@ -7,11 +7,11 @@ import { IonicModule } from '@ionic/angular';
 import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
-import { CrudService } from '../providers/crud.service';
+import { CrudService } from '../../providers/crud.service';
 
 
-import { UserRegistrationService } from '../providers/user.registration.service';
-import { ComponentSharedModule } from '../components/components-shared.module';
+import { UserRegistrationService } from '../../providers/user.registration.service';
+import { ComponentSharedModule } from '../../components/components-shared.module';
 
 
 

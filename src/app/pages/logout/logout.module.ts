@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { LogoutPageRoutingModule } from './logout-routing.module';
 
 import { LogoutPage } from './logout.page';
-import { ComponentSharedModule } from '../components/components-shared.module';
+import { ComponentSharedModule } from '../../components/components-shared.module';
 
 @NgModule({
   imports: [

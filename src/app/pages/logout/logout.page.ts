@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MenuController, ToastController, AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
-import { UserRegistrationService } from '../providers/user.registration.service';
-import { CrudService } from '../providers/crud.service';
+import { UserRegistrationService } from '../../providers/user.registration.service';
+import { CrudService } from '../../providers/crud.service';
 
 
 

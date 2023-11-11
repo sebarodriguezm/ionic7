@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { UserRegistrationService } from '../providers/user.registration.service';
+import { UserRegistrationService } from '../../providers/user.registration.service';
 import { MenuController, AlertController } from '@ionic/angular';
-import { CrudService } from '../providers/crud.service';
-import { UserDto } from '../core/dto/user.dto';
-import { DbTables } from '../core/constants/db-tables.constant';
+import { CrudService } from '../../providers/crud.service';
+import { UserDto } from '../../core/dto/user.dto';
+import { DbTables } from '../../core/constants/db-tables.constant';
 import { Storage } from '@ionic/storage-angular';
-import { UtilsService } from '../services/utils.service';
+import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'app-login',
