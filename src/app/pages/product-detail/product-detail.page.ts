@@ -20,6 +20,7 @@ export class ProductDetailPage implements OnInit {
   ]
   categoriesData: { [category: string]: any[] } = {};
   products:ProductDto[] = [];
+  showCreate: boolean = false;
   constructor(
     private crud: CrudService<ProductDto>,
     private navParams: NavParams,

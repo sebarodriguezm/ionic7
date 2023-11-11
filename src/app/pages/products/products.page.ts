@@ -13,6 +13,7 @@ import { UtilsService } from 'src/app/services/utils.service';
 import { UserDto } from 'src/app/core/dto/user.dto';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { categoryDto } from 'src/app/core/dto/category.dto';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-products',
   templateUrl: './products.page.html',
@@ -30,11 +31,14 @@ export class ProductsPage implements OnInit {
   categoriesData: { [category: string]: any[] } = {};
   currentUser: any;
   logged:UserDto = new UserDto();
+  category: any;
   constructor(
     private utils: UtilsService,
     private crud: CrudService<ProductDto>,
     private userService: CrudService<UserDto>,
-    private crudCategory: CrudService<categoryDto>
+    private crudCategory: CrudService<categoryDto>,
+    private route: ActivatedRoute,
+    private router: Router
   ) {
     this.crud = this.crud.newCrudInstance();
     this.crud.setTable(DbTables.Products);
@@ -48,6 +52,7 @@ export class ProductsPage implements OnInit {
 
   ngOnInit() {
     this.getProducts();
+    this.category = this.route.snapshot.params['category'];
     const auth = getAuth();
        
     onAuthStateChanged(auth, (user) => {
@@ -88,15 +93,20 @@ export class ProductsPage implements OnInit {
   async getProducts() {
     this.crud.getCollection().subscribe({
       next: (data: any) => {
-       
-        this.productList = data.sort((a:any, b:any) => {
+        this.productList = data.sort((a: any, b: any) => {
           const categoryA = a.category.toLowerCase();
           const categoryB = b.category.toLowerCase();
           return categoryA.localeCompare(categoryB);
         });
+  
+        // Filtrar la lista según la categoría proporcionada en la ruta
+        if (this.category && this.categories.includes(this.category)) {
+          this.productList = this.productList.filter((p) => p.category === this.category);
+        }
       }
     });
   }
+  
 
 
   categoriesDataKeys() {
@@ -155,4 +165,7 @@ export class ProductsPage implements OnInit {
     this.utils.goTo('/product-detail',product.id)
   }
 
+  back(){
+    this.router.navigate(['/home']);
+  }
 }

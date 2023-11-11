@@ -1,7 +1,22 @@
 <app-header></app-header>
 
 <ion-content>
-
+<ion-button (click)="back()" expand="block" fill="clear" shape="round">
+  Volver
+</ion-button>
+<ion-col size="12" [ngClass]="efect">
+  <ion-list>
+    <ion-item lines="full">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4"><b>Nombre</b></ion-col>
+          <ion-col size="4"><b>Precio</b></ion-col>
+          <ion-col size="4"><b>Categoría</b></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-col>
   <ion-item lines="full" class="pointer" *ngFor="let product of productList" >
     <ion-grid>
       <ion-row  >
@@ -21,7 +36,7 @@
   <ion-grid >
     <ion-row>
     
-      <ion-col size="12" [ngClass]="efect" >
+      <ion-col size="12" [ngClass]="efect" *ngIf="showForm">
         <div class="ion-text-center ion-padding-bottom">
           <h2 >Crear producto</h2>
         </div>
@@ -65,19 +80,7 @@
        
       </ion-col>
 
-      <ion-col size="12" [ngClass]="efect">
-        <ion-list>
-          <ion-item lines="full">
-            <ion-grid>
-              <ion-row>
-                <ion-col size="4"><b>Nombre</b></ion-col>
-                <ion-col size="4"><b>Precio</b></ion-col>
-                <ion-col size="4"><b>Categoría</b></ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-item>
-        </ion-list>
-      </ion-col>
+    
     </ion-row>
   </ion-grid>
 </ion-content>
