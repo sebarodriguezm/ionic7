@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDto } from '../core/dto/user.dto';
-import { CrudService } from '../providers/crud.service';
+import { UserDto } from '../../core/dto/user.dto';
+import { CrudService } from '../../providers/crud.service';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { DbTables } from '../core/constants/db-tables.constant';
+import { DbTables } from '../../core/constants/db-tables.constant';
 import { MenuController } from '@ionic/angular';
 
 @Component({

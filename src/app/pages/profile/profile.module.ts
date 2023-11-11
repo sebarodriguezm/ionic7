@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ProfilePageRoutingModule } from './profile-routing.module';
 
 import { ProfilePage } from './profile.page';
-import { ComponentSharedModule } from '../components/components-shared.module';
+import { ComponentSharedModule } from '../../components/components-shared.module';
 
 @NgModule({
   imports: [
