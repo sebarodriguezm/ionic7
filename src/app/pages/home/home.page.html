@@ -7,7 +7,7 @@
     <ion-row>
       <ion-col size="6" *ngFor="let category of categories">
         <ion-card >
-          <ion-card-content routerLink="/products">
+          <ion-card-content [routerLink]="['/products', category]">
             {{category}}
           </ion-card-content>
         </ion-card>
