@@ -33,14 +33,12 @@ export class LoginPage implements OnInit {
     private utils: UtilsService,
     private storage: Storage,
     private alertController: AlertController,
-    private menuCtrl: MenuController
     ) {
       this.crud = this.crud.newCrudInstance();
       this.crud.setTable(DbTables.Users);
   }
 
   async ngOnInit() {
-   this.cerrarMenu();
     let datos = this.storage.get('currentUser');
     console.log('datos', datos)
    let id = await this.regService.verifyLogin();
@@ -51,26 +49,15 @@ export class LoginPage implements OnInit {
     console.log('ID del usuario:', this.id);
   } else {
     console.log('No se encontraron datos de usuario en el almacenamiento local.');
-  }
-/*    if(id){
-
-     this.navController.navigateRoot('/cards');
-   } 
-  */ 
+  } 
   }
 
   isValidPhoneNumber(phone: string): boolean {
     return this.phonePattern.test(phone);
   }
 
-  cerrarMenu() {
-    this.menuCtrl.close();
-    this.menuCtrl.enable(false);
-  }
-
   ionViewWillEnter() {
     localStorage.clear();
-    this.cerrarMenu();
   }
 
   login() {
